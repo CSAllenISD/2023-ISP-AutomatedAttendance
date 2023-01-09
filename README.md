@@ -6,7 +6,7 @@
 ## Product Manager: 
   -Akshay Vemulapalli
   
-## Product Manager:
+## Project Manager:
   -William Clymire
   
 ## Release Manager:
