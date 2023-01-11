@@ -30,11 +30,12 @@
   -Akshay: AkshayVemulapalli
   
   -William: Bread2134 | Project Manager
-      ‎ https://codermerlin.com/users/william-clymire/Digital%20Portfolio/index.html
+  
+  ‎https://codermerlin.com/users/william-clymire/Digital%20Portfolio/index.html
   
   -Connor: RusticKnite | Release Engineer
   
-      ‎ https://www.codermerlin.com/users/connor-church/Digital%20Portfolio/index.html
+  ‎https://www.codermerlin.com/users/connor-church/Digital%20Portfolio/index.html
   
   -Ayaan: ayaank13
   
