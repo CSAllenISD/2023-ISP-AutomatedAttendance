@@ -15,8 +15,6 @@
 ## Development Engineers:
   -Oliver Hankins (Head)
   
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/oliver-hankins/Digital%20Portfolio/index.html
-  
   -Ayaan Kashyap
   
   -Serenity Underwood
@@ -42,6 +40,8 @@
   -Ayaan: ayaank13
   
   -Oliver: Oliver-Hankins
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/oliver-hankins/Digital%20Portfolio/index.html
   
   -Josh: joshuawlee | QA Engineer
   
