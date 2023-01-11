@@ -22,7 +22,7 @@
 ## QA Engineers:
   -Cameron Farley
   
-  -Josh Lee | https://www.codermerlin.com/users/joshua-lee/Digital%20Portfolio/index.html
+  -Josh Lee 
   
   -Vijay Vemulapalli
   
@@ -31,21 +31,23 @@
   
   -William: Bread2134 | Project Manager
   
-  ‎https://codermerlin.com/users/william-clymire/Digital%20Portfolio/index.html
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://codermerlin.com/users/william-clymire/Digital%20Portfolio/index.html
   
   -Connor: RusticKnite | Release Engineer
   
-  ‎https://www.codermerlin.com/users/connor-church/Digital%20Portfolio/index.html
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/connor-church/Digital%20Portfolio/index.html
   
   -Ayaan: ayaank13
   
   -Oliver: Oliver-Hankins
   
-  -Josh: joshuawlee
+  -Josh: joshuawlee | QA Engineer
   
-  -Cameron: cameronFarley
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/joshua-lee/Digital%20Portfolio/index.html
   
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
+  -Cameron: cameronFarley | QA Engineer
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
   -Vijay: VJCS185
   
