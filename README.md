@@ -20,7 +20,7 @@
   -Serenity Underwood
 
 ## QA Engineers:
-  -Cameron Farley
+  -Cameron Farley | https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
   -Josh Lee
   
