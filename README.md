@@ -20,7 +20,7 @@
   -Serenity Underwood
 
 ## QA Engineers:
-  -Cameron Farley | https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
+  -Cameron Farley
   
   -Josh Lee | https://www.codermerlin.com/users/joshua-lee/Digital%20Portfolio/index.html
   
@@ -43,7 +43,9 @@
   
   -Josh: joshuawlee
   
-  -Cameron: cameronfarley
+  -Cameron: cameronFarley
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
   -Vijay: VJCS185
   
