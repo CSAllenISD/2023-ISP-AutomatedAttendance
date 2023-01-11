@@ -31,7 +31,8 @@
   
   -William: Bread2134
   
-  -Connor: RusticKnite
+  -Connor: RusticKnite | Release Engineer
+           https://www.codermerlin.com/users/connor-church/Digital%20Portfolio/index.html
   
   -Ayaan: ayaank13
   
