@@ -27,7 +27,9 @@
   -Vijay Vemulapalli
   
 ## Github Usernames & Portfolios:
-  -Akshay: AkshayVemulapalli
+  -Akshay: AkshayVemulapalli | Product Manager
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://codermerlin.com/users/akshay-vemulapalli/Digital%20Portfolio/index.html
   
   -William: Bread2134 | Project Manager
   
