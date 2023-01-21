@@ -29,6 +29,7 @@ class FaceRecognition:
     def __init__(self):
         self.encode_faces()
 
+    #Pulls images from the faces file and encodes them
     def encode_faces(self):
         for image in os.listdir('faces'):
             face_image = face_recognition.load_image_file(f"faces/{image}")
@@ -38,7 +39,7 @@ class FaceRecognition:
             self.known_face_names.append(image)
         print(self.known_face_names)
 
-
+    #Runs video camera, finds faces
     def run_recognition(self):
         video_capture = cv2.VideoCapture(0)
 
@@ -51,7 +52,7 @@ class FaceRecognition:
             if self.process_current_frame:
                 small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
 
-                #change from bgr to rgb
+                #change colors from BGR to RGB
                 rgb_small_frame = small_frame[:, :, ::-1]
 
                 self.face_locations = face_recognition.face_locations(rgb_small_frame)
@@ -74,27 +75,29 @@ class FaceRecognition:
 
             self.process_current_frame = not self.process_current_frame
 
-            #results
+            #Placing results
             for (top, right, bottom, left), name in zip(self.face_locations, self.face_names):
                 top *= 4
                 right *= 4
                 bottom *= 4
                 left *= 4
 
+                #Rendering the rectangle
                 cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
                 cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
                 cv2.putText(frame, name, (left + 6, bottom - 6), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
 
-            #display
+            #Displaying the box
             cv2.imshow('Face Recognition', frame)
 
+            #Quit with q
             if cv2.waitKey(1) == ord('q'):
                 break
 
         video_capture.release()
         cv2.destroyAllWindows()
 
-
+#It wont spontaneously run, only will run if told to run
 if __name__ == '__main__':
     fr = FaceRecognition()
     fr.run_recognition()
