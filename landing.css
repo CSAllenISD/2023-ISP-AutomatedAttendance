@@ -34,6 +34,13 @@ p {
     margin: -30% 10% 0 0;
 }
 
+.yellowhoodie {
+    height: auto;
+    float: right;
+    max-width: 45%;
+    margin: -30% 5% 0 0;
+}
+
 .login {
     border-radius: 5px;
     font-size: 20px;
