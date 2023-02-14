@@ -72,7 +72,7 @@ p {
     padding: 14px 60px;
     margin: 2% 0 0 21%;
     cursor: pointer;
-    color: #f21a4c;
+    color: #000;
     background-color: #fff;
     font-size: 1.5rem;
     font-family: 'Circular',sans-serif;
@@ -85,6 +85,6 @@ p {
   
   .signup:hover {
     background-color: #d7d5d5;
-    color: #f21a4c;
+    color: #000;
     border: 3px solid #d7d5d5;
   }
