@@ -5,7 +5,11 @@ body {
 }
 
 p {
+    font-family: 'Circular',sans-serif;
     color: #efedf0;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 1%;
 }
 
 .link {
@@ -30,7 +34,7 @@ a:hover, a:active {
 
 .heading {
     font-weight: 400;
-    padding: 10% 0 5% 0;
+    padding: 7% 0 4% 0;
     color: #efedf0;
     text-align: center;
     font-size: 72px;
@@ -81,11 +85,21 @@ a:hover, a:active {
   transform: translateY(-4rem);
 }
 
+input[type='password'] {
+    font-family: Verdana;
+    letter-spacing: 0.125em;
+}
+
+.form__input::placeholder {
+    font-family: 'Circular',sans-serif;
+    letter-spacing: normal;
+}
+
 .login {
     border-radius: 5px;
     font-size: 20px;
     padding: 14px 68.5px;
-    margin: 5% 0 0 21%;
+    margin: 1% 0 1% 43%;
     cursor: pointer;
     color: #fff;
     background-color: #f21a4c;
@@ -108,7 +122,7 @@ a:hover, a:active {
     border-radius: 5px;
     font-size: 20px;
     padding: 14px 60px;
-    margin: 2% 0 0 21%;
+    margin: 1% 0 1% 43%;
     cursor: pointer;
     color: #000;
     background-color: #fff;
