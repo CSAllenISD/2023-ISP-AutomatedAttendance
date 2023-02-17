@@ -1,0 +1,46 @@
+body {
+    background-color: #2e2d33;
+    font-family: 'Circular',sans-serif;
+
+}
+
+p {
+    color: #efedf0;
+}
+
+
+
+
+.heading {
+    font-weight: 400;
+    color: #efedf0;
+    text-align: center;
+    font-size: 72px;
+    letter-spacing: 0.05em;
+    line-height: 130%;
+    margin-top: 2%;
+}
+
+.cancel {
+    display: block;
+    margin-left: 3%;
+    margin-top: 3%;
+    text-decoration: none;
+    text-align: left;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    background-color: #2e2d33;
+    color: #efedf0;
+}
+.save {
+    display: block;
+    margin-right: 3%;
+    text-decoration: none;
+    float: right;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    background-color: #2e2d33;
+    color: #efedf0;
+}
