@@ -18,6 +18,8 @@
   -Ayaan Kashyap
   
   -Serenity Underwood
+  
+  -Cameron Farley
 
 ## QA Engineers:
   -Cameron Farley
