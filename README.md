@@ -51,7 +51,7 @@
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/joshua-lee/Digital%20Portfolio/index.html
   
-  -Cameron: cameronFarley | QA Engineer
+  -Cameron: cameronFarley | QA Engineer / Front End Developer
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
