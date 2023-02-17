@@ -1,0 +1,98 @@
+body {
+    background-color: #2e2d33;
+    font-family: 'Circular',sans-serif;
+
+}
+
+/* Font Coloring for Landing Page */
+p {
+    color: #efedf0;
+}
+
+/* Heading Attributes */
+.heading {
+    font-weight: 400;
+    color: #efedf0;
+    text-align: left;
+    font-size: 72px;
+    letter-spacing: 0.05em;
+    line-height: 130%;
+    margin: 10% 0 0 15%;
+}
+
+/* Plant Image Attributes */
+.plant {
+    height: auto;
+    float: right;
+    position: absolute;
+    z-index: -1;
+    max-width: 120%;
+    margin: -31% 12% 0 0;
+}
+
+/* Woman Image Attributes */
+.woman {
+    height: auto;
+    float: right;
+    max-width: 40%;
+    margin: -30% 10% 0 0;
+}
+
+/* Man Image Attributes */
+.yellowhoodie {
+    height: auto;
+    float: right;
+    max-width: 45%;
+    margin: -30% 5% 0 0;
+}
+
+/* Login Button Attributes */
+.login {
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 14px 68.5px;
+    margin: 5% 0 0 21%;
+    cursor: pointer;
+    color: #fff;
+    background-color: #f21a4c;
+    font-size: 1.5rem;
+    font-family: 'Circular',sans-serif;
+    font-weight: 100;
+    border: 3px solid #f21a4c;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+}
+
+  /* Properties of Login Button Hover */ 
+  .login:hover {
+    background-color: #c5133d;
+    color: #fff;
+    border: 3px solid #c5133d;
+  }
+
+
+/* Properties of Sign Up Button */
+  .signup {
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 14px 60px;
+    margin: 2% 0 0 21%;
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Circular',sans-serif;
+    font-weight: 100;
+    border: 3px solid #fFF;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+  }
+  
+  /* Properties of Sign Up Button Hover */
+  .signup:hover {
+    background-color: #d7d5d5;
+    color: #000;
+    border: 3px solid #d7d5d5;
+  }
