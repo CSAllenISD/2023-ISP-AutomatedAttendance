@@ -57,7 +57,7 @@
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
-  -Vijay: VJCS185
+  -Vijay: VJCS185 | QA Engineer
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/vijay-vemulapalli/Digital%20Portfolio/index.html
   
