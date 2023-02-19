@@ -9,7 +9,6 @@ p {
     color: #efedf0;
     font-size: 20px;
     text-align: center;
-    padding-top: 1%;
 }
 
 .link {
@@ -22,14 +21,17 @@ p {
 
 a:link, a:visited {
     color: #efedf0;
-    background-color: transparent;
+    background-image: linear-gradient(#efedf0, #efedf0);
+    background-size: 0% 0.1em;
+    background-position-y: 75%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
     text-decoration: none;
 }
 
 a:hover, a:active {
-    color:#efedf0;
-    background-color: transparent;
-    text-decoration: none;
+    background-size: 75% 0.1em;
 }
 
 .heading {
@@ -51,12 +53,12 @@ a:hover, a:active {
   font-size: 62,5%;
 }
 
-/* rem is used for precide cont spacing */
+/* rem is used for precide font spacing */
 .form__label {
   font-family: 'Circular', sans-serif;
   color: #efedf0;
   font-size: 1.2rem;
-  margin-left: 27.5rem;
+  margin-left: 30%;
   margin-top: 0.7rem;
   display: block;
   transition: all 0.3s;
@@ -99,7 +101,9 @@ input[type='password'] {
     border-radius: 5px;
     font-size: 20px;
     padding: 14px 68.5px;
-    margin: 1% 0 1% 43%;
+    margin: 0 auto;
+    width: 10%;
+    display: block;
     cursor: pointer;
     color: #fff;
     background-color: #f21a4c;
@@ -113,16 +117,18 @@ input[type='password'] {
   }
   
   .login:hover {
-    background-color: #c5133d;
+    background-color: #850c28;
     color: #fff;
-    border: 3px solid #c5133d;
+    border: 3px solid #850c28;
   }
 
   .signup {
     border-radius: 5px;
     font-size: 20px;
     padding: 14px 60px;
-    margin: 1% 0 1% 43%;
+    margin: 0 auto;
+    width: 11.5%;
+    display: block;
     cursor: pointer;
     color: #000;
     background-color: #fff;
@@ -136,7 +142,7 @@ input[type='password'] {
   }
   
   .signup:hover {
-    background-color: #d7d5d5;
+    background-color: #979595;
     color: #000;
-    border: 3px solid #d7d5d5;
+    border: 3px solid #979595;
   }
