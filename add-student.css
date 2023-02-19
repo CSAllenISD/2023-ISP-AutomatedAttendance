@@ -58,11 +58,16 @@ p {
   .searchDesign {
     position: relative;
     display: block;
+    text-decoration: none;
+    border-bottom-color: #efedf0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     font-size: 1.1em;
     color: #efedf0;
     background-color: #2e2d33;
     float: left;
     margin-left: 5%;
     padding-right: 15%;
-    padding-bottom: 1%;
+    padding-bottom: 0.5%;
   }
