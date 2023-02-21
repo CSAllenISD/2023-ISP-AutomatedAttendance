@@ -53,7 +53,7 @@ nav a:hover, a:active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 95vh;
-  padding: 1rem calc((100vw - 1600px) / 2);
+  padding: 0.83vw calc((100vw - 1600px) / 2);
 }
 
 .column-left {
@@ -62,12 +62,12 @@ nav a:hover, a:active {
   justify-content: center;
   align-items: flex-start;
   color: #fff;
-  padding: 0rem 2rem;
+  padding: 0vw 2vw;
 }
 
 .column-left h1 {
   margin-bottom: 3rem;
-  font-size: 6rem;
+  font-size: 5vw;
   padding: 1rem 1rem;
   font-weight: bold;
   color: #d2b803;
@@ -76,7 +76,7 @@ nav a:hover, a:active {
 .column-left button {
   padding: 1rem 3rem;
   margin-bottom: 8rem;
-  font-size: 2rem;
+  font-size: 1.5vw;
   font-family: 'Circular', sans-serif;
   font-weight: lighter;
   border: none;
@@ -95,7 +95,7 @@ nav a:hover, a:active {
   font-family: 'Circular', sans-serif;
   color: #efedf0;
   margin-top: 0.7rem;
-  font-size: 1.2rem;
+  font-size: 1vw;
   transition: all 0.3s;
   transform: translateY(0rem);
 }
@@ -104,13 +104,13 @@ nav a:hover, a:active {
   font-family: 'Circular', sans-serif;
   color: #001220;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 0.2rem;
+  padding: 1vw 1.5vw;
+  font-size: 1vw;
+  border-radius: 0.16vw;
   background-color: #efedf0;
   border: none;
-  width: 50rem;
-  border-bottom: 0.3rem solid transparent;
+  width: 41.6vw;
+  border-bottom: 0.25vw solid transparent;
   transition: all 0.3s;
 }
 
@@ -140,18 +140,18 @@ input[type='password'] {
 }
 
 .column-right h3 {
-  margin-left: 4rem;
+  margin-left: 3.33vw;
   margin-bottom: 1rem;
-  font-size: 4rem;
-  padding: 1rem 3rem;
+  font-size: 3.33vw;
+  padding: 0.83vw 7.5vw;
   font-weight: bold;
   color: #001220;
 }
 
 .column-right button {
-  padding: 1rem 3rem;
+  padding: 0.83vw 2.5vw;
   margin-bottom: 8rem;
-  font-size: 2rem;
+  font-size: 1.6vw;
   font-family: 'Circular', sans-serif;
   font-weight: lighter;
   border: none;
@@ -169,7 +169,7 @@ input[type='password'] {
 .hero-image {
   position: absolute;
   text-align: center;
-  width: 40rem;
+  width: 33.3vw;
   height: auto;
   margin-bottom: 8rem;
   z-index: -1;
