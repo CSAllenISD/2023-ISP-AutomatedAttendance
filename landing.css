@@ -7,7 +7,7 @@
 
 @keyframes slideInLeft {
     0% {
-      transform: translateX(-50%);
+      transform: translateX(-40%);
       opacity: 0;
     }
     100% {
@@ -18,7 +18,7 @@
 
   @keyframes slideInRight {
     0% {
-      transform: translateX(50%);
+      transform: translateX(40%);
       opacity: 0;
     }
     100% {
@@ -29,7 +29,7 @@
 
   @keyframes slideInDown {
     0% {
-      transform: translateY(-100%);
+      transform: translateY(-30%);
       opacity: 0;
     }
     100% {
@@ -48,7 +48,7 @@ body {
 }
 
 nav {
-    animation: 1s ease-out 0s 1 slideInDown;
+    animation: .5s ease-out 0s 1 slideInDown;
     height: 80px;
     background: transparent;
     display: flex;
@@ -103,7 +103,7 @@ nav a:hover, a:active {
 }
 
 .column-left {
-    animation: 1.25s ease-out 0s 1 slideInLeft;
+    animation: 1s ease-out 0s 1 slideInLeft;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,7 +150,7 @@ button:hover {
 }
 
 .column-right {
-    animation: 1.25s ease-out 0s 1 slideInRight;
+    animation: 1s ease-out 0s 1 slideInRight;
     display: flex;
     justify-content: center;
     align-items: center;
