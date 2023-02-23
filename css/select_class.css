@@ -1,0 +1,21 @@
+body {
+    background-color: #2e2d33;
+}
+
+#sign-out,
+#welcome-message,
+.class {
+    color: #efedf0;
+    font-family: 'Circular', sans--serif;
+}
+
+.option {
+    background-color: #fff;
+    color: #f21a4c;
+    border-radius: 30px;
+}
+
+#add-class {
+    background-colour: #d7d5d5;
+    color: #c5133d
+}

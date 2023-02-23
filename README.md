@@ -1,6 +1,10 @@
 # Automated Attendance
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00ada298b51b7c0a1d012ef8fc72b731c42e0901
 ## Project Description: 
    Our ISP project is an automated attendance system that functions with the use of facial recognition AI. We intend to design this product to be of use in environments where attendance is required, such as school. We aim to replace the current attendance system with a more efficient and accurate attendance system. This will be done with a camera that will be located by the entrance of the room which will utilize facial recognition software to compare the captured face with other faces in a database to automatically complete attendance. This new system will eliminate the need for teachers or even companies to waste time on attendance or even potentially make human errors with the attendance. I have high hopes for our group and our ISP project as I believe it will be a fun but also challenging project to partake in. 
 
@@ -58,12 +62,13 @@
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
-  -Vijay: VJCS185
+  -Vijay: VJCS185 | QA Engineer
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/vijay-vemulapalli/Digital%20Portfolio/index.html
   
   -Serenity: Serenity-Underwood | Developer Engineer
     https://www.codermerlin.com/users/serenity-underwood/Digital%20Portfolio/index.html
+<<<<<<< HEAD
 =======
 ## Artistic rules:
     default background color: #2e2d33
@@ -72,3 +77,15 @@
     button highlight color: #d7d5d5 & #c5133d
     font family: 'Circular',sans-serif
 >>>>>>> 5254ac798b687f21f28838e147b5c849c9c8119e
+=======
+
+Artistic rules:
+    default background color: #001220
+    accent color 1: #d2b803
+    accent color 2: #19a284
+    default text color: #fff
+    button color: #fff & #d2b308
+    button highlight color: #fff
+    font family: 'Circular',sans-serif
+
+>>>>>>> 00ada298b51b7c0a1d012ef8fc72b731c42e0901

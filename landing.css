@@ -1,91 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Circular', sans-serif;
+}
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-30%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
 body {
-    background-color: #2e2d33;
-    font-family: 'Circular',sans-serif;
-
-}
-
-p {
-    color: #efedf0;
-}
-
-.heading {
-    font-weight: 400;
-    color: #efedf0;
-    text-align: left;
-    font-size: 72px;
-    letter-spacing: 0.05em;
-    line-height: 130%;
-    margin: 10% 0 0 15%;
-}
-
-.plant {
+    width: 100%;
     height: auto;
-    float: right;
-    position: absolute;
-    z-index: -1;
-    max-width: 120%;
-    margin: -31% 12% 0 0;
+    background-image: url("images/blob-scene-haikei\ (1).svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
-.woman {
+nav {
+    animation: .5s ease-out 0s 1 slideInDown;
+    height: 80px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1800px) / 2);
+}
+
+.logo {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    padding: 0 1.5rem;
+}
+
+.logo-image {
+    width: 1.9rem;
     height: auto;
-    float: right;
-    max-width: 40%;
-    margin: -30% 10% 0 0;
 }
 
-.yellowhoodie {
-    height: auto;
-    float: right;
-    max-width: 45%;
-    margin: -30% 5% 0 0;
+nav a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #d2b803;
+    padding: 0 1.5rem;
 }
 
-.login {
-  
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 14px 68.5px;
-    margin: 5% 0 0 21%;
-    cursor: pointer;
+nav a:link, a:visited{
+    color: #d2b803;
+    background-image: linear-gradient(#fff, #fff);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+nav a:hover, a:active {
+    background-size: 60% 0.1em;
+}
+
+.hero {
+    background: transparent;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    padding: 3rem calc((100vw - 1100px) / 2);
+}
+
+.column-left {
+    animation: 1s ease-out 0s 1 slideInLeft;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     color: #fff;
-    background-color: #f21a4c;
-    font-size: 1.5rem;
-    font-family: 'Circular',sans-serif;
-    font-weight: 100;
-    border: 3px solid #f21a4c;
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-  }
-  
-  .login:hover {
-    background-color: #c5133d;
-    color: #fff;
-    border: 3px solid #c5133d;
-  }
+    padding: 0rem 2rem;
+}
 
+.column-left h1 {
+    margin-bottom: 3rem;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #d2b803;
+}
 
+.column-left h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1.5;
+}
 
-  .signup {
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 14px 60px;
-    margin: 2% 0 0 21%;
+.column-left p {
+    margin-bottom: 5rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+button {
+    padding: 1rem 3rem;
+    margin-bottom: 8rem;
+    font-size: 2rem;
+    font-family: 'Circular', sans-serif;
+    font-weight: lighter;
+    border: none;
+    color:#000;
+    background: #d2b803;
     cursor: pointer;
-    color: #000;
-    background-color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Circular',sans-serif;
-    font-weight: 100;
-    border: 3px solid #fFF;
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-  }
-  
-  .signup:hover {
-    background-color: #d7d5d5;
-    color: #000;
-    border: 3px solid #d7d5d5;
-  }
+    border-radius: 50px;
+}
+
+button:hover {
+    background: #fff;
+    color: #000
+}
+
+.column-right {
+    animation: 1s ease-out 0s 1 slideInRight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem -1rem;
+}
+
+.hero-image {
+    width: 90%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+}
+
