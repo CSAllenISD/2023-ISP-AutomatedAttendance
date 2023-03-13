@@ -9,7 +9,8 @@ data = df.to_numpy()
 
 teacher = input("Teacher Name: ")
 classroom = input("Classroom Number: ")
-subject = input("Subject: ")
+course = input("Course ID: ")
+startTime = input("Starting Time: ")
 roster = []
 
 
