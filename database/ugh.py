@@ -1,14 +1,14 @@
 import sqlite3
 
-conn = sqlite3.connect('SQLite_Python.db')
+conn = sqlite3.connect('User1.db')
 c = conn.cursor()
-
-c.execute("""CREATE TABLE new_employee(
-    id integer,
-    name varchar(255),
-    photo blob,
-    resume, blob
-    )""")
+#  ?creates new table
+# c.execute("""CREATE TABLE new_employee(
+#     id integer,
+#     name varchar(255),
+#     photo blob,
+#     resume, blob
+#     )""")
 
 def convertToBinaryData(filename):
     # Convert digital data to binary format
@@ -18,7 +18,7 @@ def convertToBinaryData(filename):
 
 def insertBLOB(empId, name, photo, resumeFile):
     try:
-        sqliteConnection = sqlite3.connect('SQLite_Python.db')
+        sqliteConnection = sqlite3.connect('User1.db')
         cursor = sqliteConnection.cursor()
         print("Connected to SQLite")
         sqlite_insert_blob_query = """ INSERT INTO new_employee
@@ -40,4 +40,5 @@ def insertBLOB(empId, name, photo, resumeFile):
             sqliteConnection.close()
             print("the sqlite connection is closed")
 
-insertBLOB(1, "Smith", "photos/furry.jpg", "photos/random.txt")
+# insertBLOB(1, "Smith", "photos/Smith.jpg", "photos/random.txt")
+insertBLOB(2,"Connor", "photos/Smith.jpg", "photos/random.txt")
