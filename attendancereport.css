@@ -1,0 +1,63 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  form {
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  select, input[type="date"], button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #FFFFFF;
+  }
+  
+  th {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #1B1B1B;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #000000;
+  }
+  
+  tr:hover {
+    background-color: #424242;
+  }
+  
