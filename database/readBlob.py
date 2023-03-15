@@ -1,4 +1,5 @@
 import sqlite3
+import os.path
 
 def writeTofile(data, filename):
     # Convert binary data to proper format and write it on Hard Disk
@@ -12,7 +13,7 @@ def readBlobData(empId):
         cursor = sqliteConnection.cursor()
         print("Connected to SQLite")
 
-        sql_fetch_blob_query = """SELECT * from new_employee where id = ?"""
+        sql_fetch_blob_query = """SELECT * FROM new_employee WHERE id = ?"""
         cursor.execute(sql_fetch_blob_query, (empId,))
         record = cursor.fetchall()
         for row in record:
@@ -21,13 +22,16 @@ def readBlobData(empId):
             photo = row[2]
             resumeFile = row[3]
 
-            print("Storing employee image and resume on disk \n")
+            print("Storing student image and resume on disk \n")
          #   photoPath = "E:\pynative\Python\photos\db_data\\" + name + ".jpg"
          #   resumePath = "E:\pynative\Python\photos\db_data\\" + name + ".txt"
             photoPath =  name + ".jpg"
+            photoFolder = 'photos/'
+            completePhotoName = os.path.join(photoFolder, photoPath)
             resumePath = name + ".txt"
-            writeTofile(photo, photoPath)
-        writeTofile(resumeFile, resumePath)
+
+            writeTofile(photo, completePhotoName)
+            writeTofile(resumeFile, resumePath)
 
         cursor.close()
 
@@ -47,7 +51,7 @@ readBlobData(2)
 #         cursor = sqliteConnection.cursor()
 #         print("Connected to SQLite")
 
-#         sql_fetch_blob_query = """SELECT * from new_employee where id = ?"""
+#         sql_fetch_blob_query = """SELECT * from User1 where id = ?"""
 #         cursor.execute(sql_fetch_blob_query, (empId,))
 #         record = cursor.fetchall()
 #         for row in record:
