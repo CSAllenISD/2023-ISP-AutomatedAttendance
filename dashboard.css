@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+* {
+    font-family: 'Outfit', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: #181818;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    max-width: 12%;
+    min-width: 12%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #101010;
+    padding: 2rem 0;
+}
+
+.wrapper .sidebar .logo {
+    display: block;
+    max-width: 40%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 8rem;
+}
+
+.wrapper .sidebar .profile-picture {
+    display: block;
+    max-width: 40%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper .sidebar h2 {
+    color: #8685ef;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8rem;
+    overflow-wrap: break-word;
+}
+
+.wrapper .sidebar ul li {
+    padding: 15px;
+}
+
+.wrapper .sidebar ul li a {
+    color: #c2c2c2;
+    display: block;
+}
+
+.wrapper .sidebar ul li a .fa-solid {
+    width: 25px;
+}
+
+.wrapper .sidebar ul li:hover {
+    background: #242424;
+}
+
+.wrapper .sidebar ul li:hover a{
+    color: #dbdbdb;
+}

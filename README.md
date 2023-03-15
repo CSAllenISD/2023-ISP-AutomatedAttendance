@@ -18,6 +18,8 @@
   -Ayaan Kashyap
   
   -Serenity Underwood
+  
+  -Cameron Farley
 
 ## QA Engineers:
   -Cameron Farley
@@ -51,13 +53,24 @@
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/joshua-lee/Digital%20Portfolio/index.html
   
-  -Cameron: cameronFarley | QA Engineer
+  -Cameron: cameronFarley | QA Engineer / Front End Developer
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/cameron-farley/Digital%20Portfolio/index.html
   
-  -Vijay: VJCS185
+  -Vijay: VJCS185 | QA Engineer
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/vijay-vemulapalli/Digital%20Portfolio/index.html
   
   -Serenity: Serenity-Underwood | Developer Engineer
-    https://www.codermerlin.com/users/serenity-underwood/Digital%20Portfolio/index.html
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.codermerlin.com/users/serenity-underwood/Digital%20Portfolio/index.html
+=======
+Artistic rules:
+    default background color: #001220
+    accent color 1: #d2b803
+    accent color 2: #19a284
+    default text color: #fff
+    button color: #fff & #d2b308
+    button highlight color: #fff
+    font family: 'Circular',sans-serif
+
+>>>>>>> 00ada298b51b7c0a1d012ef8fc72b731c42e0901
