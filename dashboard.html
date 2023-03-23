@@ -9,24 +9,81 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <div class="wrapper">
-            <div class="sidebar">
-                <img src="images/projectlogo.png" class="logo">
-                <img src="images/profilepicturetemp.png" class="profile-picture">
-                <h2>LaQuesha DeShawnte</h2>
+
+        <section id="sidebar">
+            <img src="images/projectlogo.png" class="logo">
+            <div class="items">
                 <ul>
                     <li><a href="/"><i class="fa-solid fa-house"></i> Dashboard</a></li>
                     <li><a href="/"><i class="fa-solid fa-folder"></i> Classes</a></li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
                     <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
                     <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                     <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
-        </div>
+        </section>
+
+        <section id="main-content">
+            <h1 class="welcome-name">
+                Welcome, <span style="color: #8685ef">LaQuesha</span>.
+            </h1>
+
+            <div class="statistics">
+                <div class="stat-boxes">
+                    <div>
+                        <span>Tardies</span>
+                        <h3>--</h3>
+                        </div>
+                </div>
+                <div class="stat-boxes">
+                    <div>
+                        <span>Absences</span>
+                        <h3>--</h3>
+                    </div>
+                </div>
+                <div class="stat-boxes">
+                    <div>
+                        <span>Presents</span>
+                        <h3>--</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="camera-display">
+                <div class="camera-box">
+                    <div><!--Insert camera display here--></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-right">
+            <div class="table-box">
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <td><i class="fa-solid fa-left"></i></td>
+                            <td>Period 1</td> <!-- Current class period -->
+                            <td><i class="fa-solid fa-right"></i></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="status">
+                                <i class="fa-solid fa-circle"></i>
+                            </td>
+
+                            <td class="student-name">
+                                <div class="student-de">
+                                    <h5>Oliver Hankins</h5> <!-- student name goes here -->
+                                    <p>243592</p> <!-- student id goes here -->
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </body>
 </html>
