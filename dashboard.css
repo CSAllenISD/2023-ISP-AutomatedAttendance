@@ -139,6 +139,7 @@ body {
     width: 100%;
     margin: 30px 30px 0 30px;
     border-radius: 15px;
+    padding: 12px 12px 0 12px;
 }
 
 .table-box .status {
@@ -146,14 +147,23 @@ body {
     width: 24px;
 }
 
-.table-box thead {
-    color: rgb(220, 220, 220);
+.heading {
+    padding: 10px;
+}
+
+.heading h3 {
+    color: #8685ef;
+    font-size: 20px;
 }
 
 .status i {
     color: red;
     width: 24px;
     height: auto;
+}
+
+.student-name {
+    padding: 12px;
 }
 
 .student-name h5 {
