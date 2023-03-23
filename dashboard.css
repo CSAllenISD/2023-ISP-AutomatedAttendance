@@ -121,7 +121,7 @@ body {
 
 .camera-display .camera-box {
     background: #1C1C1C;
-    width: 660px;
+    width: 100%;
     height: 100%;
     padding: 16px 20px;
     border-radius: 15px;
@@ -139,4 +139,29 @@ body {
     width: 100%;
     margin: 30px 30px 0 30px;
     border-radius: 15px;
+}
+
+.table-box .status {
+    padding: 12px 12px 0 12px;
+    width: 24px;
+}
+
+.table-box thead {
+    color: rgb(220, 220, 220);
+}
+
+.status i {
+    color: red;
+    width: 24px;
+    height: auto;
+}
+
+.student-name h5 {
+    color: rgb(220, 220, 220);
+    font-size: 18px;
+}
+
+.student-name p {
+    color:rgb(170, 170, 170);
+    font-size: 14px;
 }
