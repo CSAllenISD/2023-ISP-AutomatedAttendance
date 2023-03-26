@@ -37,8 +37,12 @@
             <div class="column-right"> 
                 <img src="images/yellowblob.png" class="hero-image">     
                 <h3>Or, if you already have an account</h3>
-                <button onclick="window.location.href='{{ url_for('landing_page')}}'"></button>Log In</button>
-                </a>
+                <script>
+                    function go_home() {
+                        window.location.href="{{ url_for('landing_page')}}";
+                    }
+                </script>
+                <button class="button" onclick="go_home()">Log In</button>
             </div>
             </div>
             </section>
