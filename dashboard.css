@@ -89,7 +89,7 @@ body {
 .statistics {
     padding: 30px 30px 0 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -147,13 +147,11 @@ body {
     width: 24px;
 }
 
-.heading {
-    padding: 10px;
-}
-
-.heading h3 {
+.table-box h3 {
     color: #8685ef;
     font-size: 20px;
+    padding: 10px;
+    text-align: center;
 }
 
 .status i {
