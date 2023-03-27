@@ -84,6 +84,7 @@ body {
     padding: 75px 30px 0 30px;
     font-size: 4rem;
     font-weight: 700;
+    letter-spacing: 0.2rem;
 }
 
 .class-periods {
@@ -132,28 +133,43 @@ body {
 }
 
 .create-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
 }
 
 .create-buttons .new-class-button {
+    margin-right: 20px;
     background: #8685ef;
     color: #cacaca;
-    width: 100%;
+    width: 190px;
     height: 100%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     border-radius: 30px;
-}
-
-.create-buttons .new-class-button {
     font-size: 24px;
 }
 
-.create-buttons .new-class-button i {
+.create-buttons i {
     padding-right: 5px;
 }
 
-.create-buttons .new-class-button .new-class-button-wrapper {
+.new-class-button-wrapper {
+    padding: 5px 10px;
+}
+
+.create-buttons .edit-classes-button {
+    background: #8685ef;
+    color: #cacaca;
+    width: 210px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+}
+
+.edit-classes-button-wrapper {
     padding: 5px 10px;
 }
