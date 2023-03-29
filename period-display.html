@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="classes.css" />
+        <link rel="icon" type="image/png" href="images/projectlogo.png"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+
+        <section id="sidebar">
+            <img src="images/projectlogo.png" class="logo">
+            <div class="items">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li><a href="/"><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
+                    <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
+                    <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="main-content">
+            <h1 class="welcome-name">
+                Period 1
+            </h1>
+
+            <div class="board">
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>ID</td>
+                            <td>Grade</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td class="table-people">
+                                <img src="images/profilepicturetemp.png" alt="">
+                                <div class="table-people-name">
+                                    <h5>LaQuesha D'Shawnte</h5>
+                                    <p>laquesha.dshawnte@student.allenisd.org</p>
+                                </div>
+                           </td> 
+
+                           <td class="table-ID">
+                                <h5>241830</h5>
+                           </td>
+
+                           <td class="table-grade">
+                                <h5>12</h5>
+                           </td>
+
+                           <td class="table-edit">
+                                <a href="/"></a>
+                           </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="create-buttons">
+                <div class="new-class-button">
+                    <div class="new-class-button-wrapper">
+                        <i class="fa-solid fa-plus"></i>
+                        New Class
+                    </div>
+                </div>
+
+                <div class="edit-classes-button">
+                    <div class="edit-classes-button-wrapper">
+                        <i class="fa-solid fa-pen"></i>
+                        Edit Classes
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
