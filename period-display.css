@@ -14,6 +14,11 @@ body {
     display: flex;
 }
 
+a,a:visited {
+    text-decoration: none;
+    color: transparent;
+}
+
 #sidebar {
     background: #101010;
     width: 250px;
@@ -21,6 +26,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 #sidebar .logo {
@@ -44,11 +50,6 @@ body {
     background-color: #242424;
     cursor: pointer;
 }
-
-#sidebar .items li:nth-child(2) {
-    border-left: 4px solid white;
-}
-
 
 #sidebar .items i {
     color: rgb(202, 202, 202);
@@ -74,25 +75,132 @@ body {
 }
 
 #main-content {
-    width: calc(100% - 650px);
+    width: calc(100% - 350px);
     margin-left: 300px;
     position: relative;
 }
 
 #main-content .welcome-name {
-    color: #fff;
-    padding: 75px 30px 0 30px;
-    font-size: 4rem;
+    padding: 75px 30px 75px 30px;
     font-weight: 700;
     letter-spacing: 0.2rem;
 }
 
-.board {
-    width: 100%;
-    margin: 30px 0 30px 30px;
-    overflow: auto;
+#main-content .welcome-name h1 {
+    color: #fff;
+    font-size: 4rem;
+}
+
+#main-content .welcome-name h3 {
+    color: rgb(222, 222, 222);
+    font-size: 1.5rem;
+}
+
+main.table {
     background: #1c1c1c;
     border-radius: 30px;
+    box-shadow: 0 .4rem .8rem #0005;
+    overflow: hidden;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    padding: 1.5rem 1.5rem .5rem 2.5rem;
+}
+
+.table-header h1 {
+    color: rgb(213, 213, 213);
+    font-size: 36px;
+}
+
+input {
+    width: 30%;
+    background: #232323;
+    color:rgb(124, 124, 124);
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-right: 20px;
+    outline: none;
+}
+
+.table-body {
+    width: 94%;
+    max-height: calc(89% - .8rem);
+    margin: .8rem auto;
+    overflow: auto;
+}
+
+.table-body::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background: #0004;
+    visibility: hidden;
+}
+
+.table-body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 48px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    color: rgb(213, 213, 213);
+    font-size: 20px;
+}
+
+thead th {
+    color: rgb(124, 124, 124);
+    position: sitcky;
+    top: 0;
+    left: 0;
+    text-align: left;
+}
+
+tbody tr {
+    border-top: 1px solid #151515;
+}
+
+tbody a, a:visited {
+    text-decoration: none;
+    color: rgb(98, 98, 98);
+}
+
+tbody .table-link {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    border: 3px solid rgb(98, 98, 98);
+    padding: 4px 12px;
+    border-radius: 5px;
+}
+
+tbody .table-link:hover {
+    background: rgb(98, 98, 98);
+    color: #1c1c1c;
+}
+
+tbody tr:hover {
+    background: #252525;
 }
 
 .create-buttons {
@@ -113,6 +221,7 @@ body {
     padding: 10px;
     border-radius: 30px;
     font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .create-buttons i {
@@ -131,8 +240,15 @@ body {
     padding: 10px;
     border-radius: 30px;
     font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .edit-classes-button-wrapper {
     padding: 5px 10px;
+}
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
 }

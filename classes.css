@@ -26,6 +26,7 @@ a,a:visited {
     position: fixed;
     top: 0;
     left: 0;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 #sidebar .logo {
@@ -111,6 +112,7 @@ a,a:visited {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .class-periods .class-boxes h3 {
@@ -147,6 +149,7 @@ a,a:visited {
     padding: 10px;
     border-radius: 30px;
     font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .create-buttons i {
@@ -165,6 +168,7 @@ a,a:visited {
     padding: 10px;
     border-radius: 30px;
     font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .edit-classes-button-wrapper {

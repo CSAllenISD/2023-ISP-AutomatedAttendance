@@ -21,6 +21,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 #sidebar .logo {
@@ -102,6 +103,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .statistics .stat-boxes h3 {
@@ -125,6 +127,7 @@ body {
     height: 100%;
     padding: 16px 20px;
     border-radius: 15px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 #content-right {
@@ -140,6 +143,7 @@ body {
     margin: 30px 30px 0 30px;
     border-radius: 15px;
     padding: 12px 12px 0 12px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
 .table-box .status {

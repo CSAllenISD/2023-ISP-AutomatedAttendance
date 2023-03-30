@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Dashboard</title>
-        <link rel="stylesheet" href="classes.css" />
+        <link rel="stylesheet" href="period-display.css" />
         <link rel="icon" type="image/png" href="images/projectlogo.png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -15,7 +15,7 @@
             <div class="items">
                 <ul>
                     <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                    <li><a href="/"><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li><a href="classes.html"><i class="fa-solid fa-folder"></i> Classes</a></li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
                     <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
                     <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
@@ -25,62 +25,68 @@
         </section>
 
         <section id="main-content">
-            <h1 class="welcome-name">
-                Period 1
-            </h1>
+            <div class="welcome-name">
+                <h1>Period 1</h1>
+                <h3># students</h3>
+            </div>
 
-            <div class="board">
+        <main class="table">
+            <section class="table-header">
+                <h1>Students</h1>
+                <input type="text" placeholder="Search">
+            </section>
+
+            <section class="table-body">
                 <table width="100%">
                     <thead>
                         <tr>
-                            <td>Name</td>
-                            <td>ID</td>
-                            <td>Grade</td>
-                            <td></td>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Grade</th>
+                            <th></th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr>
-                           <td class="table-people">
-                                <img src="images/profilepicturetemp.png" alt="">
-                                <div class="table-people-name">
-                                    <h5>LaQuesha D'Shawnte</h5>
-                                    <p>laquesha.dshawnte@student.allenisd.org</p>
-                                </div>
-                           </td> 
-
-                           <td class="table-ID">
-                                <h5>241830</h5>
-                           </td>
-
-                           <td class="table-grade">
-                                <h5>12</h5>
-                           </td>
-
-                           <td class="table-edit">
-                                <a href="/"></a>
-                           </td>
+                             <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
+                             <td> 243658 </td>
+                             <td> 12 </td>
+                             <td> <a href="/" class="table-link">Edit</a> </td>
                         </tr>
+
+                        <tr>
+                            <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
+                            <td> 243658 </td>
+                            <td> 12 </td>
+                            <td> <a href="/" class="table-link">Edit</a> </td>
+                       </tr>
+
                     </tbody>
                 </table>
-            </div>
+            </section>
 
             <div class="create-buttons">
+                <a href="/">
                 <div class="new-class-button">
                     <div class="new-class-button-wrapper">
                         <i class="fa-solid fa-plus"></i>
                         New Class
                     </div>
                 </div>
+                </a>
 
+                <a href="/">
                 <div class="edit-classes-button">
                     <div class="edit-classes-button-wrapper">
                         <i class="fa-solid fa-pen"></i>
                         Edit Classes
                     </div>
                 </div>
+                </a>
             </div>
         </section>
+    </main>
 
     </body>
 </html>
