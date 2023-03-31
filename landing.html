@@ -5,13 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Facial Recognition</title>
         <link rel="stylesheet" type="text/css" href="landing.css">
+	<script>
+	  function goToLogin() {
+	      window.location.href = "login.html";
+	  }
+	          </script>  
     </head>
     <body>
-        <h1 class="heading">Automated<br>Attendance</h1>
-
-        <a href="login.html">
-        <button class="login" type="button">Log In</button>
-        </a>
+      <h1 class="heading">Automated<br>Attendance</h1>
+      
+<button class="login" type="button" onclick="goToLogin()">Log In</button>
         <br>
         <button class="signup" type="button">Sign Up</button>
 

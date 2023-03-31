@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Display Facial Webcam Stream</title>
 
     <style>
       #borderContainment {
-	  margin: 0px auto;
-	  width: 500px;
-	  height: 375px;
-	  border: 10px #333 solid;
+          margin: 0px auto;
+          width: 500px;
+          height: 375px;
+          border: 10px #333 solid;
       }
       #videoAttribute {
-	  width: 500px;
-	  height: 375px;
-	  background-color: #666;
+          width: 500px;
+          height: 375px;
+          background-color: #666;
       }
     </style>
   </head>
 
   <body>
     <div id="borderContainmnet">
-      <video autoplay="true" id="videoAttribute">
+      <video autoplay id="videoAttribute">
 
       </video>
     </div>
@@ -31,14 +31,14 @@
       var video = document.querySelector("#videoAttribute");
 
       if (navigator.mediaDevices.getUserMedia) {
-	  navigator.mediaDevices.getUserMedia({ video: true })
-	      .then(function (stream) {
+          navigator.mediaDevices.getUserMedia({ video: true })
+              .then(function (stream) {
 		  video.srcObject = stream;
-	      })
-	      .catch(function (err0r) {
+              })
+              .catch(function (err0r) {
 		  console.log("Something went wrong!");
-	      });
+              });
       }
     </script>
   </body>
-  </html>
+    </html>
