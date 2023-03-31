@@ -30,48 +30,49 @@
                 <h3># students</h3>
             </div>
 
-        <main class="table">
-            <section class="table-header">
-                <h1>Students</h1>
-                <input type="text" placeholder="Search">
-            </section>
+            <main class="table">
+                <section class="table-header">
+                    <h1>Students</h1>
+                    <input type="text" placeholder="Search">
+                </section>
 
-            <section class="table-body">
-                <table width="100%">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>ID</th>
-                            <th>Grade</th>
-                            <th></th>
+                <section class="table-body">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Grade</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
+                                <td> 243658 </td>
+                                <td> 12 </td>
+                                <td> <a href="/" class="table-link">Edit</a> </td>
+                            </tr>
+
+                            <tr>
+                                <td> <img src="images/childTantrum-168269757-770x553-1-650x428.jpeg" alt=""> Ayaan Cashapp </td>
+                                <td> 247865 </td>
+                                <td> K </td>
+                                <td> <a href="/" class="table-link">Edit</a> </td>
                         </tr>
-                    </thead>
 
-                    <tbody>
-                        <tr>
-                             <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
-                             <td> 243658 </td>
-                             <td> 12 </td>
-                             <td> <a href="/" class="table-link">Edit</a> </td>
-                        </tr>
-
-                        <tr>
-                            <td> <img src="images/childTantrum-168269757-770x553-1-650x428.jpeg" alt=""> Ayaan Cashapp </td>
-                            <td> 247865 </td>
-                            <td> K </td>
-                            <td> <a href="/" class="table-link">Edit</a> </td>
-                       </tr>
-
-                    </tbody>
-                </table>
-            </section>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
 
             <div class="create-buttons">
-                <a href="/">
+                <a href="#" id="myBtn">
                 <div class="new-class-button">
-                    <div class="new-class-button-wrapper">
+                    <div class="new-class-button-wrapper" id="myBtn">
                         <i class="fa-solid fa-plus"></i>
-                        New Class
+                        Add Student
                     </div>
                 </div>
                 </a>
@@ -80,13 +81,54 @@
                 <div class="edit-classes-button">
                     <div class="edit-classes-button-wrapper">
                         <i class="fa-solid fa-pen"></i>
-                        Edit Classes
+                        Edit Class
                     </div>
                 </div>
                 </a>
             </div>
-        </section>
-    </main>
 
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1>Add a Student</h1>
+                        <span class="close"><i class="fa-solid fa-x"></i></span>
+                    </div>
+                        <section class="table-body">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>ID</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    <tr>
+                                        <td> <input type="checkbox"> </td>
+                                        <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
+                                        <td> 243658 </td>
+                                        <td> 12 </td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td> <input type="checkbox"> </td>
+                                        <td> <img src="images/childTantrum-168269757-770x553-1-650x428.jpeg" alt=""> Ayaan Cashapp </td>
+                                        <td> 247865 </td>
+                                        <td> K </td>
+                                    </tr>
+        
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+              
+              </div>
+              <script src="add-student.js"></script>
+        </section>
+
+        
     </body>
 </html>
