@@ -21,19 +21,19 @@ def gen_frames():
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
 
-'''
-defining app route for default page of the web-app
+
+# defining app route for default page of the web-app
 
 @app.route('/')
 def index():
-  return render_template('index.html')
-'''
+  return render_template('dashboard.html')
 
-'''
-defining app route for video feed
+
+
+# defining app route for video feed
 
 @app.route('/video_feed')
 def video_feed():
   return response(gen_frames(), mimtype='multipart/x-mixed-replace; boundary=frame')
-'''
+
 
