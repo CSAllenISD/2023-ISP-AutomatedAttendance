@@ -1,0 +1,19 @@
+{% extends 'dashboard.html' %}
+<!-- will try new name for index eventually -->
+
+{% block content %}
+    {% for post in posts %}
+    <tr>
+        <td class="status">
+            <i class="fa-solid fa-circle"></i>
+        </td>   
+    <td class="student-name">
+            <div class="student-de">
+                <h5>{{post['student_name']}}</h5> <!-- student name goes here -->
+                <p>{{post['student_id']}}</p> <!-- student id goes here -->
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+{% endblock %}
+
