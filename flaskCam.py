@@ -26,7 +26,7 @@ def gen_frames():
 
 @app.route('/')
 def index():
-  return render_template('dashboard.html')
+  return render_template('testCam.html')
 
 
 
