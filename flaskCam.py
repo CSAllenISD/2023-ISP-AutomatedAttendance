@@ -35,6 +35,5 @@ defining app route for video feed
 @app.route('/video_feed')
 def video_feed():
   return response(gen_frames(), mimtype='multipart/x-mixed-replace; boundary=frame')
-
 '''
 
