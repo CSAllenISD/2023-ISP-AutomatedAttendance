@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" >
+    <link rel="icon" type="image/png" href="images/projectlogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+  </head>
+  <body>
+
+    <section id="sidebar">
+      <img src="images/projectlogo.png" class="logo" alt="Project logo">
+      <div class="items">
+	<ul>
+	  <li><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
+	  <li><a href="classes.html"><i class="fa-solid fa-folder"></i> Classes</a></li>
+	  <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
+	  <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
+	  <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
+	  <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+	</ul>
+      </div>
+    </section>
+
+    <section id="main-content">
+      <h1 class="welcome-name">
+	Welcome, <span style="color: #8685ef">LaQuesha</span>.
+      </h1>
+
+      <div class="statistics">
+	<div class="stat-boxes">
+	  <div>
+	    <span>Tardies</span>
+	    <h3>--</h3>
+	  </div>
+	</div>
+	<div class="stat-boxes">
+	  <div>
+	    <span>Absences</span>
+	    <h3>--</h3>
+	  </div>
+	</div>
+	<div class="stat-boxes">
+	  <div>
+	    <span>Presents</span>
+	    <h3>--</h3>
+	  </div>
+	</div>
+      </div>
+
+      <div class="camera-display">
+	<div class="camera-box">
+	  <div id="borderContainmnet">
+	    <video id="videoAttribute">
+<img src="{{ url_for('video_feed') }}" width="100%">
+	    </video>
+	  </div>
+	</div>
+      </div>
+    </section>
+
+    <section id="content-right">
+      <div class="table-box">
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Period 1</th><!-- Current class period -->
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td class="status">
+		<i class="fa-solid fa-circle"></i>
+	      </td>
+
+	      <td class="student-name">
+		<div class="student-de">
+		  <h5>Oliver Hankins</h5> <!-- student name goes here -->
+		  <p>243592</p> <!-- student id goes here -->
+		</div>
+	      </td>
+	    </tr>
+
+	    <tr>
+	      <td class="status">
+		<i class="fa-solid fa-circle"></i>
+	      </td>
+
+	      <td class="student-name">
+		<div class="student-de">
+		  <h5>Willie Clymie</h5> <!-- student name goes here -->
+		  <p>246593</p> <!-- student id goes here -->
+		</div>
+	      </td>
+	    </tr>
+
+	    <tr>
+	      <td class="status">
+		<i class="fa-solid fa-circle"></i>
+	      </td>
+
+	      <td class="student-name">
+		<div class="student-de">
+		  <h5>Joshy-poo</h5> <!-- student name goes here -->
+		  <p>269438</p> <!-- student id goes here -->
+		</div>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+    </section>
+
+  </body>
+  </html>
