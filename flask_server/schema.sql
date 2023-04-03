@@ -1,6 +1,0 @@
-DROP TABLE IF EXISTS posts;
-
-CREATE TABLE posts (
-    student_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    student_name TEXT NOT NULL,
-);

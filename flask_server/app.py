@@ -1,51 +1,51 @@
 import sqlite3
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, make_response, url_for, flash, redirect
 import os
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
-def get_db_connection():
-    conn = sqlite3.connect('database.db')
-    conn.row_factory = sqlite3.Row
-    return conn
+HOST_NAME = "localhost"
+HOST_PORT = 80
+DBFILE = "students.db"
+# app.debug = True
+
+# (B) HELPER - GET ALL USERS FROM DATABASE
+def getstudents():
+  conn = sqlite3.connect(DBFILE)
+  cursor = conn.cursor()
+  cursor.execute("SELECT * FROM `students`")
+  results = cursor.fetchall()
+  conn.close()
+  return results
 
 
 @app.route('/')
 def landing_page():
     return render_template('landing.html')
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(HOST_NAME, HOST_PORT)
 
 @app.route('/signup/')
 def signup():
     return render_template('signup.html')
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(HOST_NAME, HOST_PORT)
 
 @app.route('/dashboard/', methods=('GET','POST'))
-def dahsboard():
+def dashboard():
     return render_template('dashboard.html')
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(HOST_NAME, HOST_PORT)
 
-@app.route('/attendanceTable.html/', methods=('GET', 'POST'))
-def create():
-    if request.method == 'POST':
-        student_name = request.form['student_name']
-        student_id = request.form['student_id']
+@app.route("/table1/")
+def table1():
+  # (C1) GET ALL USERS
+    students = getstudents()
+  # print(users)
+ # (C2) RENDER HTML PAGE
+    return render_template("table1.html", student=students)
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
 
-        if not student_name:
-            flash('student_id is required!')
-        elif not student_id:
-            flash('student_id is required!')
-        else:
-            conn = get_db_connection()
-            conn.execute('INSERT INTO posts (student_id, student_id) VALUES (?, ?)',
-                         (student_name, student_id))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('dashboard.html'))
-
-    return render_template('attendanceTable.html')
