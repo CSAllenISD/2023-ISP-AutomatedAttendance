@@ -85,6 +85,7 @@ nav a:link, a:visited{
     background-position-y: 100%;
     background-position-x: 50%;
     background-repeat: no-repeat;
+    padding: .7rem;
     transition: background-size 0.2s ease-in-out;
     text-decoration: none;
 }
