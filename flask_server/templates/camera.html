@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Camera Feed</title>
+    <link rel="stylesheet" type="text/css" href='{{url_for('static',filename='css/camera.css')}}''>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="logo">
+        <img src="https://via.placeholder.com/50x50" alt="Logo">
+        <h1>My Camera</h1>
+      </div>
+      <ul class="items">
+        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+        <li><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+      </ul>
+    </div>
+    <div id="main-content">
+      <h1 class="welcome-name">Welcome, John Doe</h1>
+      <div class="statistics">
+        <div class="stat-boxes">
+          <h3>123</h3>
+          <span>Visitors</span>
+        </div>
+        <div class="stat-boxes">
+          <h3>567</h3>
+          <span>Views</span>
+        </div>
+        <div class="stat-boxes">
+          <h3>890</h3>
+          <span>Likes</span>
+        </div>
+      </div>
+      <div class="camera-display">
+        <div class="camera-box">
+          <h2></h2>
+          <div id="video-box">
+            <video id="video" autoplay></video>
+          </div>
+        </div>
+        <div id="content-right">
+          <div class="table-box">
+            <h3>Recent Activity</h3>
+            <table>
+              <tr>
+                <td class="status"><i class="fas fa-times-circle"></i></td>
+                <td class="student-name">
+                  <h5>John Doe</h5>
+                  <p>Access Denied</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="status"><i class="fas fa-check-circle"></i></td>
+                <td class="student-name">
+                  <h5>Jane Doe</h5>
+                  <p>Access Granted</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="status"><i class="fas fa-times-circle"></i></td>
+                <td class="student-name">
+                  <h5>Bob Smith</h5>
+                  <p>Access Denied</p>
+                </td>
+              </tr>
+            </table>
+            <button class="btn">View All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='{{url_for('static',filename='javascript/camera.js')}}'></script>
+  </body>
+</html>
