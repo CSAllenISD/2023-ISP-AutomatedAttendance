@@ -28,7 +28,8 @@
 		const email = document.getElementById("emailInput").value;
 
 		if (email.endsWith("@student.allenisd.org")) {
-			alert("You are an admin user!");
+            window.location.href = "AttendanceReport.html";
+			//alert("You are an admin user!");
 		} else {
 			alert("Sorry, you are not authorized to access this page.");
 		}
