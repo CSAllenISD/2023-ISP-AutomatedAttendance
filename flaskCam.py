@@ -31,7 +31,10 @@ def gen_frames():
 
 @app.route('/')
 def index():
-  return render_template('testCam.html')
+  return render_template('index.html')
+if __name__ == "__main__":
+   app.run(debug=True)
+
 
 
 
@@ -39,6 +42,9 @@ def index():
 
 @app.route('/video_feed')
 def video_feed():
-  return response(gen_frames(), mimtype='multipart/x-mixed-replace; boundary=frame')
+  return Response(gen_frames(), mimtype='multipart/x-mixed-replace; boundary=frame')
+
+if __name__ == "__main__":
+   app.run(debug=True)
 
 
