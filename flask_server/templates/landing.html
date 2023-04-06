@@ -19,17 +19,11 @@
         </nav>
         <section class="hero">
             <div class="hero-container">
-                <div class="column-left">
-                    <h1>Automated Attendance</h1>
-                    <h3>Attendance made easy</h3>
-                    <p>An independent study project by a <br>group of students at Allen High School</p>
-                    <a href="{{ url_for('login') }}">
-                    <button>Get Started</button>
-                    </a>
+                <div class="title">
+                    <h1>Streamline <span style="color: #8685ef">Attendance</span> Tracking With <span style="color: #8685ef">Facial Recognition</span> Technology</h1>
+                    <h3>Eliminate errors and improve efficiency with our cutting-edge facial recognition attendance system</h3>
                 </div>
-                <div class="column-right">
-                    <img src='{{url_for('static',filename='images/yellowAndTealBlob.png')}}' class="hero-image">
-                </div>
+                <a href='{{url_for('static',filename='css/singup.css')}}' class="get-started">Get Started</a>
             </div>
         </section>
     </body>

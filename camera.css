@@ -50,7 +50,6 @@ body {
     border-left: 4px solid white;
 }
 
-
 #sidebar .items i {
     color: rgb(202, 202, 202);
     width: 30px;
@@ -79,6 +78,11 @@ body {
     margin-left: 300px;
     position: relative;
 }
+
+.logo h1{
+    color: #fff;   
+}
+
 
 #main-content .welcome-name {
     color: #fff;
@@ -131,49 +135,110 @@ body {
 }
 
 #content-right {
-    width: 400px;
-    height: 100%;
-    margin-top: 70px;
-    margin-right: 80px;
+width: 400px;
+height: 100%;
+margin-top: 70px;
+margin-right: 80px;
 }
 
 #content-right .table-box {
-    background: #1c1c1c;
-    width: 100%;
-    margin: 30px 30px 0 30px;
-    border-radius: 15px;
-    padding: 12px 12px 0 12px;
-    box-shadow: 0 .4rem .8rem #0005;
+background: #1c1c1c;
+width: 100%;
+margin: 30px 30px 0 30px;
+border-radius: 15px;
+padding: 12px 12px 0 12px;
+box-shadow: 0 .4rem .8rem #0005;
 }
 
 .table-box .status {
-    padding: 12px 12px 0 12px;
-    width: 24px;
+padding: 12px 12px 0 12px;
+width: 24px;
 }
 
 .table-box h3 {
-    color: #8685ef;
-    font-size: 20px;
-    padding: 10px;
-    text-align: center;
+color: #8685ef;
+font-size: 20px;
+padding: 10px;
+text-align: center;
 }
 
 .status i {
-    color: red;
-    width: 24px;
-    height: auto;
+color: red;
+width: 24px;
+height: auto;
 }
 
 .student-name {
-    padding: 12px;
+padding: 12px;
 }
 
 .student-name h5 {
-    color: rgb(220, 220, 220);
-    font-size: 18px;
+color: rgb(220, 220, 220);
+font-size: 18px;
 }
 
 .student-name p {
-    color:rgb(170, 170, 170);
-    font-size: 14px;
+color:rgb(170, 170, 170);
+font-size: 14px;
+}
+
+.btn {
+border: 2px solid #8685ef;
+background: none;
+color: #8685ef;
+padding: 12px 30px;
+border-radius: 40px;
+margin: 30px;
+cursor: pointer;
+font-size: 18px;
+transition: all 0.3s ease;
+}
+
+.btn:hover {
+background: #8685ef;
+color: white;
+}
+
+.error-message {
+color: red;
+font-size: 16px;
+margin: 10px 0;
+}
+
+.success-message {
+color: green;
+font-size: 16px;
+margin: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+#main-content {
+width: 100%;
+margin-left: 0;
+}
+#sidebar {
+width: 70px;
+}
+#sidebar .logo {
+width: 100%;
+justify-content: center;
+padding: 20px 0;
+}
+#sidebar .items {
+display: none;
+}
+#content-right {
+margin-right: 0;
+margin-top: 30px;
+}
+}
+
+@media only screen and (max-width: 576px) {
+.statistics {
+flex-direction: column;
+align-items: center;
+}
+.statistics .stat-boxes {
+margin: 10px 0;
+}
 }

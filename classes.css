@@ -14,6 +14,11 @@ body {
     display: flex;
 }
 
+a,a:visited {
+    text-decoration: none;
+    color: transparent;
+}
+
 #sidebar {
     background: #101010;
     width: 250px;
@@ -36,6 +41,7 @@ body {
 }
 
 #sidebar .items li {
+    color: #fff;
     list-style: none;
     padding: 15px 0;
     transition: 0.3s ease;
@@ -46,7 +52,7 @@ body {
     cursor: pointer;
 }
 
-#sidebar .items li:nth-child(1) {
+#sidebar .items li:nth-child(2) {
     border-left: 4px solid white;
 }
 
@@ -72,6 +78,7 @@ body {
     color: #fff;
     font-weight: 300px;
     transition: 0.3s ease;
+    width: 100%;
 }
 
 #main-content {
@@ -85,95 +92,85 @@ body {
     padding: 75px 30px 0 30px;
     font-size: 4rem;
     font-weight: 700;
+    letter-spacing: 0.2rem;
 }
 
-.statistics {
-    padding: 30px 30px 0 30px;
+.class-periods {
+    padding: 50px 30px 0 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.statistics .stat-boxes {
+.class-periods .class-boxes {
     background: #1C1C1C;
-    width: 184px;
-    padding: 16px 20px;
-    border-radius: 15px;
+    width: 285px;
+    height: 285px;
+    padding: 24px 20px 28px 28px;
+    border-radius: 30px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 0 .4rem .8rem #0005;
 }
 
-.statistics .stat-boxes h3 {
-    color: #8685ef;
-    font-size: 48px;
-}
-
-.statistics .stat-boxes span {
+.class-periods .class-boxes h3 {
     color: #9c9a9a;
     font-size: 24px;
 }
 
-.camera-display {
-    padding: 30px 30px 0 30px;
-    display: flex;
-}
-
-.camera-display .camera-box {
-    background: #1C1C1C;
-    width: 100%;
-    height: 100%;
-    padding: 16px 20px;
-    border-radius: 15px;
-    box-shadow: 0 .4rem .8rem #0005;
-}
-
-#content-right {
-    width: 400px;
-    height: 100%;
-    margin-top: 70px;
-    margin-right: 80px;
-}
-
-#content-right .table-box {
-    background: #1c1c1c;
-    width: 100%;
-    margin: 30px 30px 0 30px;
-    border-radius: 15px;
-    padding: 12px 12px 0 12px;
-    box-shadow: 0 .4rem .8rem #0005;
-}
-
-.table-box .status {
-    padding: 12px 12px 0 12px;
-    width: 24px;
-}
-
-.table-box h3 {
+.class-periods .class-boxes span {
     color: #8685ef;
-    font-size: 20px;
+    font-size: 48px;
+}
+
+.class-periods .class-boxes i {
+    font-size: 50px;
+    color: #cacaca;
+    align-self: flex-end;
+}
+
+.create-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.create-buttons .new-class-button {
+    margin-right: 20px;
+    background: #8685ef;
+    color: #cacaca;
+    width: 190px;
+    height: 100%;
     padding: 10px;
-    text-align: center;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
-.status i {
-    color: red;
-    width: 24px;
-    height: auto;
+.create-buttons i {
+    padding-right: 5px;
 }
 
-.student-name {
-    padding: 12px;
+.new-class-button-wrapper {
+    padding: 5px 10px;
 }
 
-.student-name h5 {
-    color: rgb(220, 220, 220);
-    font-size: 18px;
+.create-buttons .edit-classes-button {
+    background: #8685ef;
+    color: #cacaca;
+    width: 210px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
 }
 
-.student-name p {
-    color:rgb(170, 170, 170);
-    font-size: 14px;
+.edit-classes-button-wrapper {
+    padding: 5px 10px;
 }
