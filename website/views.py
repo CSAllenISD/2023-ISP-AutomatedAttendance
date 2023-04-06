@@ -21,7 +21,7 @@ def home():
             db.session.commit()
             flash('Note added!', category='success')
 
-    return render_template("home.html", user=current_user)
+    return render_template("dashboard.html", user=current_user)
 
 
 
