@@ -1,24 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Circular', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 body {
   width: 100%;
-  height: auto;
-  background-image: url("images/loginbackground.svg");
+  height: 100%;
+  background: linear-gradient(#1D1D1D, #000000);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
-nav {
+.nav-items {
   height: 100px;
   background: transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0rem calc((100vw - 1850px) / 2);
 }
@@ -26,12 +28,12 @@ nav {
 nav a {
   text-decoration: none;
   font-size: 1.4rem;
-  color: #001220;
+  color: #fff;
   padding: 0 1.5rem;
 }
 
 nav a:link, a:visited{
-  color: #001220;
+  color: #fff;
   background-image: linear-gradient(#fff, #fff);
   background-size: 0% 0.1em;
   background-position-y: 100%;
@@ -50,49 +52,62 @@ nav a:hover, a:active {
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  text-align: center;
   height: 95vh;
   padding: 0.83vw calc((100vw - 1600px) / 2);
 }
 
-.column-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+p {
   color: #fff;
-  padding: 0vw 2vw;
 }
 
-.column-left h1 {
+h1 {
   margin-bottom: 3rem;
   font-size: 5vw;
   padding: 1rem 1rem;
   font-weight: bold;
-  color: #d2b803;
+  color: #fff;
 }
 
-.column-left button {
+.hero-container button {
   padding: 1rem 3rem;
-  margin-bottom: 8rem;
   font-size: 1.5vw;
   font-family: 'Circular', sans-serif;
   font-weight: lighter;
+  margin-bottom: 20px;
   border: none;
   color:#000;
-  background: #d2b803;
+  background: #8685ef;
   cursor: pointer;
   border-radius: 50px;
 }
 
-.column-left button:hover {
+.hero-container button:hover {
   background: #fff;
   color: #000
 }
 
+.hero-container a, a:active, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-container a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.form-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .form__label {
-  font-family: 'Circular', sans-serif;
+  font-family: 'Outfit', sans-serif;
   color: #001220;
   margin-top: 0.7rem;
   font-size: 1vw;
@@ -101,9 +116,9 @@ nav a:hover, a:active {
 }
 
 .form__input {
-  font-family: 'Circular', sans-serif;
+  font-family: 'Outfit', sans-serif;
   color: #001220;
-  margin: 0 auto;
+  margin-bottom: 20px;
   padding: 1vw 1.5vw;
   font-size: 1vw;
   border-radius: 0.16vw;
@@ -127,52 +142,8 @@ input[type='password'] {
 }
 
 .form__input::placeholder {
-    font-family: 'Circular',sans-serif;
+    font-family: 'Outfit',sans-serif;
     letter-spacing: normal;
-}
-
-.column-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-}
-
-.column-right h3 {
-  margin-left: 3.33vw;
-  margin-bottom: 1rem;
-  font-size: 3.33vw;
-  padding: 0.83vw 7.5vw;
-  font-weight: bold;
-  color: #001220;
-}
-
-.column-right button {
-  padding: 0.83vw 2.5vw;
-  margin-bottom: 8rem;
-  font-size: 1.6vw;
-  font-family: 'Circular', sans-serif;
-  font-weight: lighter;
-  border: none;
-  color:#001220;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 50px;
-}
-
-.column-right button:hover {
-  background: #001220;
-  color: #fff
-}
-
-.hero-image {
-  position: absolute;
-  text-align: center;
-  width: 33.3vw;
-  height: auto;
-  margin-bottom: 8rem;
-  z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
