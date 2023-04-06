@@ -5,12 +5,11 @@
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Automated Attendance</title>
         <link rel="stylesheet" href='{{url_for('static',filename='css/landing.css')}}' />
-        <!-- <link rel="icon" type="image/png" href='{{url_for('static',filename='images/autoattendlogo.png')}}'/> -->
+        <link rel="icon" type="image/png" href='{{url_for('static',filename='images/autoattendlogo.png')}}'/>
     </head>
     <body>
         <nav>
-            <!-- <div class="logo"><img src="images/autoattendlogo.png" class="logo-image"></div> -->
-            <div class="logo"><img src="{{ autoattendlogo }}" class="logo-image"></div>
+            <div class="logo"><img href='{{url_for('static',filename='images/autoattendlogo.png')}}' class="logo-image"></div>
             <div class="nav-items">
                 <a href="/">About</a>
                 <a href="/">Credits</a>
@@ -24,12 +23,12 @@
                     <h1>Automated Attendance</h1>
                     <h3>Attendance made easy</h3>
                     <p>An independent study project by a <br>group of students at Allen High School</p>
-                    <a href="{{ url_for('signup') }}">
+                    <a href="{{ url_for('login') }}">
                     <button>Get Started</button>
                     </a>
                 </div>
                 <div class="column-right">
-                    <img src="images/yellowandtealblob.png" class="hero-image">
+                    <img src='{{url_for('static',filename='images/yellowAndTealBlob.png')}}' class="hero-image">
                 </div>
             </div>
         </section>

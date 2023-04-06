@@ -12,8 +12,8 @@
         </head>
         <body>
             <script>
-                function go_home() {
-                    window.location.href="{{ url_for('landing_page')}}";
+                function login() {
+                    window.location.href="{{ url_for('login')}}";
                 }
             </script>
             <nav>
@@ -40,9 +40,9 @@
                 <button onclick="go_home()">Sign Up</button>
             </div> 
             <div class="column-right"> 
-                <img src="images/yellowblob.png" class="hero-image">     
+                <img src='{{url_for('static',filename='images/yellowblob.png')}}' class="hero-image">     
                 <h3>Or, if you already have an account</h3>
-                <button class="button" onclick="go_home()">Log In</button>
+                <button class="button" onclick="login()">Log In</button>
             </div>
             </div>
             </section>

@@ -5,7 +5,6 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
-
 HOST_NAME = "localhost"
 HOST_PORT = 80
 DBFILE = "students.db"
@@ -27,9 +26,16 @@ def landing_page():
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
 
+# login and signup may need GET and PUT
 @app.route('/signup/')
 def signup():
     return render_template('signup.html')
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
+
+@app.route('/login/')
+def login():
+    return render_template('login.html')
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
 
@@ -49,3 +55,9 @@ def table1():
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
 
+
+@app.route('/add-student/')
+def add_student():
+    return render_template('add-student.html')
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
