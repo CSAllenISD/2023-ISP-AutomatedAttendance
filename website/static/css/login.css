@@ -76,7 +76,7 @@ h1 {
   font-weight: lighter;
   margin-bottom: 20px;
   border: none;
-  color:#000;
+  color:#fff;
   background: #8685ef;
   cursor: pointer;
   border-radius: 50px;
@@ -115,7 +115,7 @@ h1 {
   transform: translateY(0rem);
 }
 
-.form__input {
+.form-control {
   font-family: 'Outfit', sans-serif;
   color: #001220;
   margin-bottom: 20px;
@@ -129,7 +129,7 @@ h1 {
   transition: all 0.3s;
 }
 
-.form__input:placeholder-shown + .form__label {
+.form-control:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateY(-4rem);
@@ -141,7 +141,7 @@ input[type='password'] {
     letter-spacing: 0.125em;
 }
 
-.form__input::placeholder {
+.form-control::placeholder {
     font-family: 'Outfit',sans-serif;
     letter-spacing: normal;
 }
