@@ -1,4 +1,5 @@
 # pip3 install: opencv-python, dlib, and face_recognition
+from flask import Flask, Response, render_template
 import face_recognition
 import os
 import sys
@@ -6,6 +7,7 @@ import cv2
 import numpy as np
 import math
 
+app = Flask(__name__)
 
 def face_confidence(face_distance, face_match_threshold=0.6):
     range = (1.0 - face_match_threshold)
@@ -42,7 +44,20 @@ class FaceRecognition:
     #Runs video camera, finds faces
     def run_recognition(self):
         video_capture = cv2.VideoCapture(0)
+            
+        while True:
 
+                #reads the camera frame 
+            success, frame=video_capture.read()
+            if not success:
+                break
+            else:
+                ret, buffer=cv2.imencode('.jpg', frame)
+                frame = buffer.tobytes()
+
+            yield(b'--frame\r\n'
+                  b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                
         if not video_capture.isOpened():
             sys.exit('Video source not found...')
 
@@ -97,7 +112,15 @@ class FaceRecognition:
         video_capture.release()
         cv2.destroyAllWindows()
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/video')
+def video():
+    return Response(FaceRecognition(),mimetype='multipart/x-mixed-replace; boundary=frame')
 #It wont spontaneously run, only will run if told to run
 if __name__ == '__main__':
+    app.run(debug=True)
     fr = FaceRecognition()
     fr.run_recognition()
