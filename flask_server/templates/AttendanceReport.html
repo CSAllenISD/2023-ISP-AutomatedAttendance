@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Report</title>
+  <link rel="stylesheet" href='{{url_for('static',filename='css/attendancereport.css')}}'>
+</head>
+<body>
+  <div class="container">
+    <h1>Attendance Report</h1>
+    <form>
+      <label for="class">Class:</label>
+      <select id="class" name="class">
+        <option value="class1">Class 1</option>
+        <option value="class2">Class 2</option>
+        <option value="class3">Class 3</option>
+      </select>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date">
+      <button type="submit">Filter</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Attendance Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td class="present">Present</td>
+          <td>01/01/2023</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td class="absent">Absent</td>
+          <td>01/01/2023</td>
+        </tr>
+        <tr>
+          <td>Bob Johnson</td>
+          <td class="present">Present</td>
+          <td>01/01/2023</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
