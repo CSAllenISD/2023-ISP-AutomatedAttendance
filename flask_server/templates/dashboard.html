@@ -12,9 +12,14 @@
         <section id="sidebar">
             <img class="logo" src='{{url_for('static',filename='images/projectlogo.png')}}' class="logo-image"></img>
             <div class="items">
+                <script>
+                    function nextPage(page) {
+                        window.location.href=page;
+                    }
+                </script>
                 <ul>
                     <li><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                    <li><a href="classes.html"><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li onclick='nextPage("../classes")'><a><i class="fa-solid fa-folder"></i> Classes</a></li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
                     <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
                     <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
