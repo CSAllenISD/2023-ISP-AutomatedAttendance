@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, Response, render_template
 import cv2
 
@@ -21,8 +20,8 @@ def generate_frames():
 
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def cameraPage():
+    return render_template('camera.html')
 
 @app.route('/video')
 def video():
@@ -31,11 +30,3 @@ def video():
 if __name__ == "__main__":
     app.run(debug=True)
 
-=======
-from website import create_app
-
-app = create_app()
-
-if __name__ == '__main__':
-    app.run(debug=True)
->>>>>>> f1314294422d1f6e7b89dec0f418df42bebd5633
