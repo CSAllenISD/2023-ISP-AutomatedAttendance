@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href='{{url_for('static',filename='css/dashboard.css')}}' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+
+        <section id="sidebar">
+            <img class="logo" src='{{url_for('static',filename='images/projectlogo.png')}}' class="logo-image"></img>
+            <div class="items">
+                <script>
+                    function nextPage(page) {
+                        window.location.href=page;
+                    }
+                </script>
+                <ul>
+                    <li><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li onclick='nextPage("../classes")'><a><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
+                    <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
+                    <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="main-content">
+            <h1 class="welcome-name">
+                Welcome, <span style="color: #8685ef">LaQuesha</span>.
+            </h1>
+
+            <div class="statistics">
+                <div class="stat-boxes">
+                    <div>
+                        <span>Tardies</span>
+                        <h3>--</h3>
+                        </div>
+                </div>
+                <div class="stat-boxes">
+                    <div>
+                        <span>Absences</span>
+                        <h3>--</h3>
+                    </div>
+                </div>
+                <div class="stat-boxes">
+                    <div>
+                        <span>Presents</span>
+                        <h3>--</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="camera-display">
+                <div class="camera-box">
+                    <div><!--Insert camera display here--></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-right">
+            <div class="table-box">
+                {% block content %} {% endblock %}
+            </div>
+        </section>
+
+    </body>
+</html>

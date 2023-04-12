@@ -1,0 +1,50 @@
+<table class="student_table" width="100%">
+    <th>
+        <tr>
+            <td class="heading">
+                <h3>Period 1</h3>
+            </td> <!-- Current class period -->
+        </tr>
+    </th>
+    <tbody>
+        <tr>
+            <td class="status">
+                <i class="fa-solid fa-circle"></i>
+            </td>
+
+            <td class="student-name">
+                <div class="student-de">
+                    <h5>Oliver Hankins</h5> <!-- student name goes here -->
+                    <p>243592</p> <!-- student id goes here -->
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="status">
+                <i class="fa-solid fa-circle"></i>
+            </td>
+
+            <td class="student-name">
+                <div class="student-de">
+                    <h5>Willie Clymie</h5> <!-- student name goes here -->
+                    <p>246593</p> <!-- student id goes here -->
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="status">
+                <i class="fa-solid fa-circle"></i>
+            </td>
+
+            <td class="student-name">
+                <div class="student-de">
+                    <h5>Joshy-poo</h5> <!-- student name goes here -->
+                    <p>269438</p> <!-- student id goes here -->
+                </div>
+            </td>
+        </tr>
+        {% block content %} {{ request.form['student_name'] }}</textarea>{% endblock %}
+    </tbody>
+</table>  

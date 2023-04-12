@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, Response, render_template
 import cv2
 
@@ -30,3 +31,11 @@ def video():
 if __name__ == "__main__":
     app.run(debug=True)
 
+=======
+from website import create_app
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(debug=True)
+>>>>>>> f1314294422d1f6e7b89dec0f418df42bebd5633
