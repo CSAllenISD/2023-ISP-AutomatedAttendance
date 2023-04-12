@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Info</title>
     <link rel="stylesheet" href="studentinformation.css">
+    <style>
+      .editable {
+        padding: 2px;
+        margin: 2px;
+      }
+    </style>
   </head>
   <body>
     <div id="sidebar">
@@ -43,46 +49,40 @@
       <h1 class="welcome-name">Student Information</h1>
       <div class="student-info">
         <div class="student">
-          <img src="student1.jpg" alt="Student 1">
           <div class="student-details">
-            <h2>John Smith</h2>
-            <p>Grade: 10</p>
-            <p>Gender: Male</p>
-            <p>Parent Contact: (123) 456-7890</p>
-            <p>Address: 123 Main St</p>
-          </div>
-        </div>
-        <div class="student">
-          <img src="student2.jpg" alt="Student 2">
-          <div class="student-details">
-            <h2>Jane Doe</h2>
-            <p>Grade: 9</p>
-            <p>Gender: Female</p>
-            <p>Parent Contact: (555) 555-5555</p>
-            <p>Address: 456 Elm St</p>
-          </div>
-        </div>
-        <div class="student">
-          <img src="student3.jpg" alt="Student 3">
-          <div class="student-details">
-            <h2>Max Johnson</h2>
-            <p>Grade: 11</p>
-            <p>Gender: Male</p>
-            <p>Parent Contact: (999) 123-4567</p>
-            <p>Address: 789 Oak St</p>
-          </div>
-        </div>
-        <div class="student">
-          <img src="student4.jpg" alt="Student 4">
-          <div class="student-details">
-            <h2>Lisa Kim</h2>
-            <p>Grade: 12</p>
-            <p>Gender: Female</p>
-            <p>Parent Contact: (111) 222-3333</p>
-            <p>Address: 321 Pine St</p>
+            <h2 class="editable" contenteditable="true">John Smith</h2>
+            <span>Grade: </span><span class="editable" contenteditable="true">10</span>
+            <span><br>Gender: </span><span class="editable" contenteditable="true">Male</span>
+            <span><br>Parent Contact: </span><span class="editable" contenteditable="true">(123) 456-7890</span>
+            <span><br>Address: </span><span class="editable" contenteditable="true">123 Main St</span>
           </div>
         </div>
       </div>
+      <div class="student-info">
+        <div class="student">
+          <div class="student-details">
+            <h2 class="editable" contenteditable="true">Bob Joe</h2>
+            <span>Grade: </span><span class="editable" contenteditable="true">10</span>
+            <span><br>Gender: </span><span class="editable" contenteditable="true">Male</span>
+            <span><br>Parent Contact: </span><span class="editable" contenteditable="true">(123) 456-7890</span>
+            <span><br>Address: </span><span class="editable" contenteditable="true">123 Main St</span>
+          </div>
+        </div>
+      </div>
+      <div class="student-info">
+        <div class="student">
+          <div class="student-details">
+            <h2 class="editable" contenteditable="true">Marcus Johnson</h2>
+            <span>Grade: </span><span class="editable" contenteditable="true">10</span>
+            <span><br>Gender: </span><span class="editable" contenteditable="true">Male</span>
+            <span><br>Parent Contact: </span><span class="editable" contenteditable="true">(123) 456-7890</span>
+            <span><br>Address: </span><span class="editable" contenteditable="true">123 Main St</span>
+          </div>
+        </div>
+      </div>
+        
+        
+
     </div>
   </body>
 </html>

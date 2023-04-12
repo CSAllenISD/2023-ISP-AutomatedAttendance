@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 * {
+    font-family: 'Outift', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Circular', sans-serif;
 }
 
 @keyframes slideInLeft {
@@ -40,11 +42,56 @@
 
 body {
     width: 100%;
-    height: auto;
-    background-image: url("images/blob-scene-haikei\ (1).svg");
-    background-repeat: no-repeat;
+    height: 100%;
+    background: linear-gradient(#1D1D1D, #000000);
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+.bubble {
+    width: 150%;
+    height: 150%;
+    background-color: #242331;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: 570px;
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.bubble-middle {
+    width: 150%;
+    height: 150%;
+    background-color: #44425C;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: calc(570px + 700px);
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.bubble-bottom {
+    width: 150%;
+    height: 150%;
+    background-color: #67648B;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: calc(1270px + 700px);
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.bubble h1 {
+    padding: 300px;
+    text-align: center;
+    color: #fff;
 }
 
 nav {
@@ -54,7 +101,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem calc((100vw - 1800px) / 2);
+    padding: 0rem calc((100vw - 1400px) / 2);
 }
 
 .logo {
@@ -65,29 +112,39 @@ nav {
 }
 
 .logo-image {
-    width: 1.9rem;
+    width: 48px;
     height: auto;
 }
 
 nav a {
     text-decoration: none;
     font-size: 1.4rem;
-    color: #d2b803;
+    color: #8685ef;
     padding: 0 1.5rem;
 }
 
 nav a:link, a:visited{
-    color: #d2b803;
+    color: #8685ef;
     background-image: linear-gradient(#fff, #fff);
     background-size: 0% 0.1em;
     background-position-y: 100%;
     background-position-x: 50%;
     background-repeat: no-repeat;
+    padding: .7rem;
     transition: background-size 0.2s ease-in-out;
     text-decoration: none;
 }
 
+nav a:nth-child(1) {
+    color: #fff;
+    background-image: linear-gradient(#8685ef, #8685ef);
+}
+
 nav a:hover, a:active {
+    background-size: 60% 0.1em;
+}
+
+nav a:hover:nth-child(1), a:active {
     background-size: 60% 0.1em;
 }
 
@@ -96,70 +153,47 @@ nav a:hover, a:active {
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 95vh;
-    padding: 3rem calc((100vw - 1100px) / 2);
-}
-
-.column-left {
-    animation: 1s ease-out 0s 1 slideInLeft;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    width: calc(100% - 300px);
+    margin-left: 150px;
+    height: 100%;
+    padding: 7rem;
     color: #fff;
-    padding: 0rem 2rem;
+    text-align: center;
 }
 
-.column-left h1 {
-    margin-bottom: 3rem;
-    font-size: 6rem;
+.title {
+    padding: 0 3rem 3rem 3rem;
+}
+
+.hero-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    color: #d2b803;
+    color: #fff;
 }
 
-.column-left h3 {
+.hero-container h3 {
+    color: #fff;
+    text-align: center;
     margin-bottom: 1rem;
     font-size: 2rem;
     line-height: 1.5;
-}
-
-.column-left p {
-    margin-bottom: 5rem;
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-button {
-    padding: 1rem 3rem;
-    margin-bottom: 8rem;
-    font-size: 2rem;
-    font-family: 'Circular', sans-serif;
     font-weight: lighter;
-    border: none;
-    color:#000;
-    background: #d2b803;
-    cursor: pointer;
+}
+
+.hero-container a {
+    text-decoration: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color:#fff;
+    background: #8585ef;
     border-radius: 50px;
 }
 
-button:hover {
+.hero-container a:hover {
     background: #fff;
     color: #000
-}
-
-.column-right {
-    animation: 1s ease-out 0s 1 slideInRight;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem -1rem;
-}
-
-.hero-image {
-    width: 90%;
-    height: auto;
 }
 
 @media screen and (max-width: 768px) {
