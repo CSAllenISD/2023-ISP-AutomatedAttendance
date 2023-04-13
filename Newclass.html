@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>New Class</title>
-</head>
-<body>
-	<h1>Create a New Class</h1>
-	<form>
-		<label for="classname">Class Name:</label>
-		<input type="text" id="classname" name="classname"><br><br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a New Class</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" />
+    <link rel="stylesheet" href="Newclass.css" />
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="logo">
+        <h2>Logo</h2>
+      </div>
+      <ul class="items">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Classes</a></li>
+        <li><a href="#">Students</a></li>
+      </ul>
+    </div>
+    <div id="main-content">
+      <h1 class="welcome-name">Create a New Class</h1>
+      <form>
+        <label for="class-name">Class Name:</label>
+        <input type="text" id="class-name" name="class-name" required />
 
-		<label for="period">Period:</label>
-		<select id="period" name="period">
-			<option value="1">Period 1</option>
-			<option value="2">Period 2</option>
-			<option value="3">Period 3</option>
-			<option value="4">Period 4</option>
-		</select><br><br>
+        <label for="period">Period:</label>
+        <select id="period" name="period">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
 
-		<button type="button" onclick="window.location.href='add-student.html'">Add Students</button>
-		<button type="button" onclick="window.location.href='classes.html'">Back</button>
-	</form>
-</body>
+        <div class="create-buttons">
+          <div class="new-class-button-wrapper">
+            <a href="add-student.html" class="new-class-button"><i class="fas fa-plus"></i>Add Students</a>
+          </div>
+          <div class="edit-classes-button-wrapper">
+            <a href="classes.html" class="edit-classes-button"><i class="fas fa-edit"></i>Back to Classes</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
