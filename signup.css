@@ -8,7 +8,7 @@
 body {
   width: 100%;
   height: auto;
-  background-image: url("images/loginbackground.svg");
+  background-image: url("images/signupbackground.svg");
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -26,12 +26,12 @@ nav {
 nav a {
   text-decoration: none;
   font-size: 1.4rem;
-  color: #001220;
+  color: #d2b803;
   padding: 0 1.5rem;
 }
 
 nav a:link, a:visited{
-  color: #001220;
+  color: #d2b803;
   background-image: linear-gradient(#fff, #fff);
   background-size: 0% 0.1em;
   background-position-y: 100%;
@@ -93,18 +93,18 @@ nav a:hover, a:active {
 
 .form__label {
   font-family: 'Circular', sans-serif;
-  color: #001220;
+  color: #efedf0;
   margin-top: 0.7rem;
   font-size: 1vw;
   transition: all 0.3s;
-  transform: translateY(0rem);
+  transform: translateY(0vw);
 }
 
 .form__input {
   font-family: 'Circular', sans-serif;
   color: #001220;
   margin: 0 auto;
-  padding: 1vw 1.5vw;
+  padding: 1.2vw 1.5vw;
   font-size: 1vw;
   border-radius: 0.16vw;
   background-color: #efedf0;
