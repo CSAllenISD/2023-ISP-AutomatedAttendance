@@ -107,19 +107,17 @@ h1 {
 }
 
 .form__label {
-  font-family: 'Outfit', sans-serif;
-  color: #001220;
-  margin-top: 0.7rem;
+  color: #fff;
+  margin-bottom: 0.7rem;
   font-size: 1vw;
   transition: all 0.3s;
-  transform: translateY(0rem);
 }
 
 .form-control {
   font-family: 'Outfit', sans-serif;
   color: #001220;
-  margin-bottom: 20px;
   padding: 1vw 1.5vw;
+  margin-bottom: 7px;
   font-size: 1vw;
   border-radius: 0.16vw;
   background-color: #efedf0;
