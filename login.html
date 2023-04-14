@@ -3,26 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log In</title>
+        <title>
+            Log In
+        </title>
         <link rel="stylesheet" type="text/css" href="login.css">
+        <link rel="icon" type="image/png" href="images/autoattendlogo.png"/>
     </head>
-    <body>
-        <a href="landing.html" class="link">Back</a>
-
+    <body=
+        <nav>
+            <div class="nav-items">
+                <a href="landing.html">Home</a>
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="hero-container">
+        <div class="column-left">
         <h1 class="heading">Log In</h1>
-
-        <div class="form__group">
-            <input type="text" class="form__input" id="name" placeholder="Username" required=""/>
-            <label for="name" class="form__label">Username</label>
+            <input type="email" class="form__input" id="name" placeholder="Email" required=""/>
+            <label for="name" class="form__label">Email</label>
             <br>
             <input type="password" class="form__input" id="name" placeholder="Password" required=""/>
             <label for="name" class="form__label">Password</label>
+            <br>
+            <button>Log In</button>
+        </div> 
+        <div class="column-right"> 
+            <img src="images/yellowloginblob.png" class="hero-image">     
+            <h3>Or, if you are new around here</h3>
+            <a href="signup.html">
+            <button>Sign Up</button>
+            </a>
         </div>
-
-        <button class="login" type="button">Log In</button>
-        <br>
-        <p>or</p>
-        <br>
-        <button class="signup" type="button">Sign Up</button>
+        </div>
+        </section>
     </body>
 </html>
