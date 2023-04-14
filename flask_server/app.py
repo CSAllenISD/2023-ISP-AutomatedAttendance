@@ -61,6 +61,34 @@ def P1():
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
+@app.route('/P2/')
+def P2():
+  # (C1) GET ALL students
+    students = getstudents('Period2')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P3/')
+def P3():
+  # (C1) GET ALL students
+    students = getstudents('Period3')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P4/')
+def P4():
+  # (C1) GET ALL students
+    students = getstudents('Period4')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P5/')
+def P5():
+  # (C1) GET ALL students
+    students = getstudents('Period5')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
 @app.route('/add-student/')
 def add_student():
     return render_template('add-student.html')
@@ -68,10 +96,6 @@ def add_student():
 @app.route('/classes/')
 def classes():
     return render_template('classes.html')
-
-@app.route('/cameraPage/')
-def cameraPage():
-    return render_template('camera.html')
 
 @app.route('/video/')
 def video():
