@@ -1,6 +1,5 @@
 #api1.py
 
-from cv2 import applyColorMap
 from flask import Flask
 from os import path
 from flask_login import LoginManager
@@ -19,6 +18,9 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DBFILE}'
     db.init_app(app)
 
+    if __name__ == "__main__":
+# Runs the Flask application only if the main.py file is being run.
+        app.run()
     from flask_server.models import User
 
     with app.app_context():
@@ -33,7 +35,7 @@ def create_app():
         return User.query.get(int(id))
 
     return app
-
+    
 #creates a database 
 def create_database(app):
     if not path.exists('flask_server/' + DBFILE):
@@ -47,9 +49,6 @@ def create_database(app):
 def index():
     return "Hello world!"
 
-# Checks to see if the name of the package is the run as the main package.
-if __name__ == "__main__":
-# Runs the Flask application only if the main.py file is being run.
-    app.run()
+
 
 
