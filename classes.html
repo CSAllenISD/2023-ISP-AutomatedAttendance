@@ -29,7 +29,7 @@
                 Classes
             </h1>
 
-            <div class="class-periods">
+            <div class="class-periods" id="class-periods-container">
                 <a href="period-display.html">
                 <div class="class-boxes">
                     <div>
@@ -61,6 +61,24 @@
                 </a>
             </div>
         </section>
-
+        <script>
+            const classPeriodsContainer = document.querySelector('#class-periods-container');
+            let classes = JSON.parse(localStorage.getItem('classes')) || [];
+            classes.forEach(function(cls) {
+              const classBox = document.createElement('a');
+              classBox.setAttribute('href', 'period-display.html');
+              classBox.innerHTML = `
+                <div class="class-boxes">
+                  <div>
+                    <span>Period ${cls.period}</span>
+                    <h3>${cls.name}</h3>
+                  </div>
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+              `;
+              classPeriodsContainer.appendChild(classBox);
+            });
+          </script>
+          
     </body>
 </html>

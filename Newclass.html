@@ -37,6 +37,9 @@
         </select>
 
         <div class="create-buttons">
+          <div class="edit-classes-button-wrapper">
+            <a href="classes.html" class="edit-classes-button"><i class="fas fa-edit"></i>Create Class</a>
+          </div>
           <div class="new-class-button-wrapper">
             <a href="add-student.html" class="new-class-button"><i class="fas fa-plus"></i>Add Students</a>
           </div>
@@ -46,5 +49,20 @@
         </div>
       </form>
     </div>
+    <script>
+        const createClassButton = document.querySelector('.create-buttons .edit-classes-button-wrapper');
+        createClassButton.addEventListener('click', function() {
+          const className = document.querySelector('#class-name').value;
+          const classPeriod = document.querySelector('#period').value;
+          const newClass = {
+            name: className,
+            period: classPeriod
+          };
+          let classes = JSON.parse(localStorage.getItem('classes')) || [];
+          classes.push(newClass);
+          localStorage.setItem('classes', JSON.stringify(classes));
+        });
+      </script>
+      
   </body>
 </html>
