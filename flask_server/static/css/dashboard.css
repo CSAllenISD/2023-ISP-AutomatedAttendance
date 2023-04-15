@@ -177,3 +177,10 @@ body {
     color:rgb(170, 170, 170);
     font-size: 14px;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
