@@ -1,9 +1,14 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask_server import app
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
+from . import DBFILE
+import sqlite3
+from flask import Flask, Response, render_template, request, make_response, url_for, flash, redirect
 
+#import cv2
 
 auth = Blueprint('auth', __name__)
 
@@ -64,3 +69,97 @@ def sign_up():
             return redirect(url_for('views.home'))
 
     return render_template("sign_up.html", user=current_user)
+
+
+
+# app.debug = True
+
+# (B) HELPER - GET ALL USERS FROM DATABASE
+def getstudents(period):
+  conn = sqlite3.connect(DBFILE)
+  cursor = conn.cursor()
+  cursor.execute("SELECT * FROM " + period)
+  results = cursor.fetchall()
+  conn.close()
+  return results
+
+# webpage camera
+#def generate_frames():
+ #   while True:
+
+        #read the cam frame
+  #      success, frame=camera.read()
+   #     if not success:
+    #        break
+     #   else:
+      #      ret, buffer=cv2.imencode('.jpg', frame)
+       #     frame=buffer.tobytes()
+        #
+        #yield(b'--frame\r\n'
+         #     b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+
+
+@app.route('/')
+def landing_page():
+    return render_template('landing.html')
+
+# login and signup may need GET and PUT
+@app.route('/signup/')
+def signup():
+    return render_template('signup.html')
+
+@app.route('/login/')
+def login():
+    return render_template('login.html')
+
+@app.route('/dashboard/', methods=('GET','POST'))
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/P1/')
+def P1():
+  # (C1) GET ALL students
+    students = getstudents('Period1')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P2/')
+def P2():
+  # (C1) GET ALL students
+    students = getstudents('Period2')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P3/')
+def P3():
+  # (C1) GET ALL students
+    students = getstudents('Period3')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P4/')
+def P4():
+  # (C1) GET ALL students
+    students = getstudents('Period4')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/P5/')
+def P5():
+  # (C1) GET ALL students
+    students = getstudents('Period5')
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+@app.route('/add-student/')
+def add_student():
+    return render_template('add-student.html')
+
+@app.route('/classes/')
+def classes():
+    return render_template('classes.html')
+
+#@app.route('/video/')
+#def video():
+#    return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')

@@ -2,16 +2,20 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+#import cv2
 
 
 db = SQLAlchemy()
-DB_NAME = "database.db"
+HOST_NAME = "localhost"
+HOST_PORT = 80
+DBFILE = "database.db"
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'a0s98fhawepjif-a9s8jdf'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DBFILE}'
+   # camera = cv2.VideoCapture(0)
     db.init_app(app)
 
     from .views import views
@@ -20,9 +24,9 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Note
+    
     # DB_NAME = User.id + ".db"
- 
+    from .models import User
 
 
     with app.app_context():
@@ -40,6 +44,6 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('website/' + DB_NAME):
+    if not path.exists('website/' + DBFILE):
         db.create_all(app=app)
         print('Created Database!')
