@@ -1,10 +1,48 @@
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect
-import os
+from flask_sqlalchemy import SQLAlchemy
+from os import path
+from flask_login import LoginManager
+
+db = SQLAlchemy()
+HOST_NAME = "localhost"
+HOST_PORT = 80
+DBFILE = "User1.db"
+
+def create_app():
+    if __name__ == '__main__':
+        app = Flask(__name__)
+        app.config['SECRET_KEY'] = 'your secret key'
+        app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DBFILE}'
+        db.init_app(app)
+
+    import views
+    import auth
+
+    app.register_blueprint(views, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/')
+
+    from .models import User
+    # DB_NAME = User.id + ".db"
+ 
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your secret key'
+    with app.app_context():
+        db.create_all()
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
+
+    return app
+
+
+
+
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -12,40 +50,3 @@ def get_db_connection():
     return conn
 
 
-@app.route('/')
-def landing_page():
-    return render_template('landing.html')
-if __name__ == '__main__':
-    app.run(debug=True)
-
-@app.route('/signup/')
-def signup():
-    return render_template('signup.html')
-if __name__ == '__main__':
-    app.run(debug=True)
-
-@app.route('/dashboard/', methods=('GET','POST'))
-def dahsboard():
-    return render_template('dashboard.html')
-if __name__ == '__main__':
-    app.run(debug=True)
-
-@app.route('/attendanceTable.html/', methods=('GET', 'POST'))
-def create():
-    if request.method == 'POST':
-        student_name = request.form['student_name']
-        student_id = request.form['student_id']
-
-        if not student_name:
-            flash('student_id is required!')
-        elif not student_id:
-            flash('student_id is required!')
-        else:
-            conn = get_db_connection()
-            conn.execute('INSERT INTO posts (student_id, student_id) VALUES (?, ?)',
-                         (student_name, student_id))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('dashboard.html'))
-
-    return render_template('attendanceTable.html')
