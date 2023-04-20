@@ -115,3 +115,35 @@ def FAQ():
     return render_template('FAQ.html')
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
+  
+@app.route('/AttendanceRep/')
+def (AttendanceReport):
+    return render_template('AttendanceReport.html')
+    
+@app.route('/Help/')
+def HelpSupport():
+    return render_template('HelpSupport.html')
+    
+@app.route('/Student-Info/')
+def StudentInformation():
+    return render_template('Student-Information.html')
+    
+@app.route('/base/')
+def base():
+    return render_template('base.html')
+    
+@app.route('/sign-in/')
+def layout():
+    return render_template('layout.html')
+    
+@app.route('/login/')
+def login-page():
+    return render_template('login.html')
+    
+@app.route('/periods/')
+def periods():
+    return render_template('period-display.html')
+    
+@app.route('/temp-period/')
+def temp():
+    return render_template('temp.html')
