@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html>
         <head>
             <meta charset="UTF-8">
@@ -6,19 +6,13 @@
             <title>
                 Sign Up
             </title>
-            <!-- <link rel="stylesheet" type="text/css" href="signup.css"> -->
-            <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/signup.css')}}"> 
-            <link rel="icon" type="image/png" href="images/autoattendlogo.png"/>
+            <link rel="stylesheet" type="text/css" href='{{url_for('static',filename='css/signup.css')}}' />
+            <link rel="icon" type="image/png" href='{{url_for('static',filename='images/autoattendlogo.png')}}' />
         </head>
         <body>
-            <script>
-                function login() {
-                    window.location.href="{{ url_for('login')}}";
-                }
-            </script>
             <nav>
                 <div class="nav-items">
-                    <a href={{ url_for('landing_page')}}>Home</a>
+                    <a href="landing.html">Home</a>
                 </div>
             </nav>
             <section class="hero">
@@ -37,15 +31,16 @@
                 <input type="password" class="form__input" id="name" placeholder="Confirm Password" required=""/>
                 <label for="name" class="form__label">Confirm Password</label>
                 <br>
-                <button onclick="go_home()">Sign Up</button>
+                <button>Sign Up</button>
             </div> 
             <div class="column-right"> 
-                <img src='{{url_for('static',filename='images/yellowblob.png')}}' class="hero-image">     
+                <img src="images/yellowblob.png" class="hero-image">     
                 <h3>Or, if you already have an account</h3>
-                <button class="button" onclick="login()">Log In</button>
+                <a href="login.html">
+                <button>Log In</button>
+                </a>
             </div>
             </div>
             </section>
         </body>
-</html>
-
+    </html>

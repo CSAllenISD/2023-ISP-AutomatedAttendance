@@ -103,3 +103,15 @@ def video():
 
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
+
+@app.route('/classes/')
+def signup():
+    return render_template('signup.html')
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
+
+@app.route('/classes/')
+def FAQ():
+    return render_template('FAQ.html')
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
