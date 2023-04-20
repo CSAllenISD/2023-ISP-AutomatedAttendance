@@ -5,6 +5,7 @@ import sys
 import cv2
 import numpy as np
 import math
+import sqlite3
 
 
 def face_confidence(face_distance, face_match_threshold=0.6):
@@ -101,3 +102,20 @@ class FaceRecognition:
 if __name__ == '__main__':
     fr = FaceRecognition()
     fr.run_recognition()
+
+def update_attendance(student_name, attendance_status):
+    # Connect to the database
+    conn = sqlite3.connect('User1.db')
+    c = conn.cursor()
+
+    # Get the class and student IDs from the database
+    class_id = 1  # Replace with the correct class ID
+    c.execute("SELECT id FROM students WHERE class_id = ? AND name = ?", (class_id, student_name))
+    student_id = c.fetchone()[0]
+
+    # Update the attendance status for the student
+    c.execute("UPDATE attendance SET status = ? WHERE student_id = ?", (attendance_status, student_id))
+
+    # Commit the changes and close the database connection
+    conn.commit()
+    conn.close()
