@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
 def update_attendance(student_name, attendance_status):
     # Connect to the database
-    conn = sqlite3.connect('User1.db')
+    conn = sqlite3.connect('Usertest.db')
     c = conn.cursor()
 
     # Get the class and student IDs from the database
