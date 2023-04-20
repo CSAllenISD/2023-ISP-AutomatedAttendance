@@ -1,4 +1,4 @@
-# pip3 install: opencv-python, dlib, and face_recognition
+# pip3 install: opencv-python, dlib, and face_recognition, CMake
 from flask import Flask, Response, render_template
 import face_recognition
 import os
