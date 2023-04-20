@@ -3,6 +3,27 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 var modalBtn = document.getElementsByClassName("modal__btn")[0];
 
+var editModeBtn = document.getElementById("editModeBtn");
+var saveBtn = document.getElementById("saveBtn");
+var td = document.querySelectorAll("[id='removeButton']");
+var editableText = document.getElementById("edit");
+
+editModeBtn.onclick = function() {
+  for(var i = 0; i < td.length; i++)
+    td[i].style.display = "block";
+  
+  editModeBtn.style.display = "none";
+  saveBtn.style.display = "inline-block";
+}
+
+saveBtn.onclick = function() {
+  for(var i = 0; i < td.length; i++)
+    td[i].style.display = "none";
+  
+  editModeBtn.style.display = "inline-block";
+  saveBtn.style.display = "none";
+}
+
 function studentCount() {
     var table = document.getElementById("tableID").rows.length - 1;
     document.getElementById("countDisplay").innerHTML = table + " students";
@@ -44,3 +65,4 @@ function filterFunction() {
       }       
     }
 }
+
