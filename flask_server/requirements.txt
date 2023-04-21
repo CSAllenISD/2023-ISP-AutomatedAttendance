@@ -1,0 +1,10 @@
+# create virtual environment
+# open environment
+# Download cmake and set correct path
+# pip install -r requirements.txt
+
+flask
+cmake
+dylib # i had to use --pre --no-build-isolation
+opencv-python
+face_recognition

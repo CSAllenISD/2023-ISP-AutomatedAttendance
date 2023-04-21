@@ -1,5 +1,7 @@
+# manuel use file currently
 # (A) LOAD PACKAGES
-import sqlite3, os
+import sqlite3
+import os
 from sqlite3 import Error
 
 # (B) DATABASE + SQL FILE
@@ -8,12 +10,12 @@ SQLFILE = "allClasses.sql"
 
 # (C) DELETE OLD DATABASE IF EXIST
 if os.path.exists(DBFILE):
-  os.remove(DBFILE)
- 
+    os.remove(DBFILE)
+
 # (D) IMPORT SQL
 conn = sqlite3.connect(DBFILE)
 with open(SQLFILE) as f:
-  conn.executescript(f.read())
+    conn.executescript(f.read())
 conn.commit()
 conn.close()
 print("Database created!")
