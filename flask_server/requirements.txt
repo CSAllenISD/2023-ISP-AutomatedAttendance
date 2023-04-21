@@ -8,3 +8,5 @@ cmake
 dylib # i had to use --pre --no-build-isolation
 opencv-python
 face_recognition
+
+# gotta try other one once more
