@@ -42,9 +42,11 @@ def landing_page():
     return render_template('landing.html')
 
 # login and signup may need GET and PUT
-@app.route('/signup/')
+@app.route('/classes/')
 def signup():
     return render_template('signup.html')
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
 
 @app.route('/login/')
 def login():
@@ -104,11 +106,6 @@ def video():
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
 
-@app.route('/classes/')
-def signup():
-    return render_template('signup.html')
-if __name__ == '__main__':
-    app.run(HOST_NAME, HOST_PORT)
 
 @app.route('/classes/')
 def FAQ():
@@ -117,7 +114,7 @@ if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
   
 @app.route('/AttendanceRep/')
-def (AttendanceReport):
+def AttendanceReport():
     return render_template('AttendanceReport.html')
     
 @app.route('/Help/')
@@ -136,10 +133,7 @@ def base():
 def layout():
     return render_template('layout.html')
     
-@app.route('/login/')
-def login-page():
-    return render_template('login.html')
-    
+
 @app.route('/periods/')
 def periods():
     return render_template('period-display.html')
