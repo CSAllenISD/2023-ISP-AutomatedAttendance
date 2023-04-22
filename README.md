@@ -3,7 +3,8 @@
 ## Project Description: 
    Our ISP project is an automated attendance system that functions with the use of facial recognition AI. We intend to design this product to be of use in environments where attendance is required, such as school. We aim to replace the current attendance system with a more efficient and accurate attendance system. This will be done with a camera that will be located by the entrance of the room which will utilize facial recognition software to compare the captured face with other faces in a database to automatically complete attendance. This new system will eliminate the need for teachers or even companies to waste time on attendance or even potentially make human errors with the attendance. I have high hopes for our group and our ISP project as I believe it will be a fun but also challenging project to partake in. 
 
-## GANTT Chart - https://docs.google.com/spreadsheets/d/15uGPTuBVmWsWW6YNMRo7OjLgvPd4dv3nIHc8Ax7pDAY/edit#gid=0
+## GANTT Chart:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://docs.google.com/spreadsheets/d/15uGPTuBVmWsWW6YNMRo7OjLgvPd4dv3nIHc8Ax7pDAY/edit#gid=0
 
 ## Product Manager: 
   -Akshay Vemulapalli
