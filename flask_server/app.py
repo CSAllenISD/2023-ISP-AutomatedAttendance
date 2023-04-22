@@ -142,6 +142,11 @@ class FaceRecognition:
         video_capture.release()
         cv2.destroyAllWindows()
 
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
 @app.route('/')
 def landing_page():
     return render_template('landing.html')
@@ -185,6 +190,13 @@ def video():
 @app.route('/video')
 def videoRecognition():
     return Response(FaceRecognition(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/editStudentTest')
+def editStudentTest():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('index.html', posts=posts)
 
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
