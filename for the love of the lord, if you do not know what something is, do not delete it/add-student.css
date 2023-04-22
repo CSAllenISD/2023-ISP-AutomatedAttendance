@@ -1,0 +1,105 @@
+body {
+    background-color: #001220;
+    font-family: 'Circular',sans-serif;
+
+}
+
+nav {
+    animation: .5s ease-out 0s 1 slideInDown;
+    height: 80px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1800px) / 2);
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #d2b803;
+    padding: 0 1.5rem;
+}
+
+nav a:link, a:visited{
+    color: #d2b803;
+    background-image: linear-gradient(#fff, #fff);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+nav a:hover, a:active {
+    background-size: 60% 0.1em;
+}
+
+p {
+    color: #d3b803;
+}
+
+
+
+
+.heading {
+    font-weight: 400;
+    color: #d3b803;
+    text-align: center;
+    font-size: 72px;
+    letter-spacing: 0.05em;
+    line-height: 130%;
+    margin-top: 2%;
+}
+
+.cancel {
+    display: block;
+    margin-left: 3%;
+    margin-top: 3%;
+    text-decoration: none;
+    text-align: left;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    background-color: #001220;
+    color: #d3b803;
+}
+.save {
+    display: block;
+    margin-right: 3%;
+    text-decoration: none;
+    float: right;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    background-color: #001220;
+    color: #d3b803;
+}
+
+.box {
+    display: block;
+    background-color: #fff;
+    padding: 13%;
+    font-size: 10em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 5%;
+  }
+ 
+  .searchDesign {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    border-bottom-color: #d3b803;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 1.1em;
+    color: #d3b803;
+    background-color: #001220;
+    float: left;
+    margin-left: 5%;
+    padding-right: 15%;
+    padding-bottom: 0.5%;
+  }

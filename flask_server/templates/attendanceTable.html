@@ -1,0 +1,21 @@
+{% extends 'dashboard.html' %} 
+
+{% block content %}
+    <form method="post">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="student_name"
+               placeholder="Post student_name"
+               value="{{ request.form['student_name'] }}"></input>student_id
+
+        <label for="content">Post Content</label>
+        <br>
+        <textarea name="student_id"
+                  placeholder="Post student_id"
+                  rows="15"
+                  cols="60"
+                  <textarea>{{ request.form['student_id'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %} 
