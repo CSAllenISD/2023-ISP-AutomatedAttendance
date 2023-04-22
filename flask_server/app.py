@@ -113,7 +113,7 @@ def add_student():
 
 @app.route('/classes/')
 def classes():
-    return render_template('classes.html')
+    return render_template('classblock.html')
 
 
 @app.route('/video/')
