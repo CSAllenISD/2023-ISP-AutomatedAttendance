@@ -1,6 +1,6 @@
 import sqlite3
-from flask import Flask, Response, render_template, request, make_response, url_for, flash, redirect
-import face_recognition
+from flask import Flask, Response, render_template, request, make_response, url_for, flash, redirect, abort
+#import face_recognition
 import os
 import cv2
 import sys
@@ -147,6 +147,15 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
+def get_post(post_id):
+    conn = get_db_connection()
+    post = conn.execute('SELECT * FROM posts WHERE id = ?',
+                        (post_id,)).fetchone()
+    conn.close()
+    if post is None:
+        abort(404)
+    return post
+
 @app.route('/')
 def landing_page():
     return render_template('landing.html')
@@ -191,12 +200,66 @@ def video():
 def videoRecognition():
     return Response(FaceRecognition(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/editStudentTest')
-def editStudentTest():
+@app.route('/editStudent')
+def editStudent():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
-    return render_template('index.html', posts=posts)
+    return render_template('editStudent.html', posts=posts)
+
+@app.route('/create/', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+
+        if not title:
+            flash('Title is required!')
+        elif not content:
+            flash('Content is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
+                         (title, content))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('editStudent'))
+    return render_template('create.html')
+
+@app.route('/<int:id>/edit/', methods=('GET', 'POST'))
+def edit(id):
+    post = get_post(id)
+
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+
+        if not title:
+            flash('Title is required!')
+
+        elif not content:
+            flash('Content is required!')
+
+        else:
+            conn = get_db_connection()
+            conn.execute('UPDATE posts SET title = ?, content = ?'
+                         ' WHERE id = ?',
+                         (title, content, id))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('editStudent'))
+
+    return render_template('edit.html', post=post)
+
+@app.route('/<int:id>/delete/', methods=('POST',))
+def delete(id):
+    post = get_post(id)
+    conn = get_db_connection()
+    conn.execute('DELETE FROM posts WHERE id = ?', (id,))
+    conn.commit()
+    conn.close()
+    flash('"{}" was successfully deleted!'.format(post['title']))
+    return redirect(url_for('editStudent'))
 
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
