@@ -1,17 +1,24 @@
 import sqlite3
 from flask import Flask, Response, render_template, request, make_response, url_for, flash, redirect
 from os import path
-import cv2
+#import cv2
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-from .models import User
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+
 
 
 db = SQLAlchemy()
 app = Flask(__name__)
-camera = cv2.VideoCapture(0)
+#camera = cv2.VideoCapture(0)
 app.config['SECRET_KEY'] = 'your secret key'
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(150), unique=True)
+    password = db.Column(db.String(150))
+    first_name = db.Column(db.String(150))
+
 
 HOST_NAME = "localhost"
 HOST_PORT = 80
@@ -48,19 +55,19 @@ def getstudents(period):
   return results
 
 # webpage camera
-def generate_frames():
-    while True:
-
-        #read the cam frame
-        success, frame=camera.read()
-        if not success:
-            break
-        else:
-            ret, buffer=cv2.imencode('.jpg', frame)
-            frame=buffer.tobytes()
-        
-        yield(b'--frame\r\n'
-              b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+#def generate_frames():
+ #   while True:
+#
+ #       #read the cam frame
+  #      success, frame=camera.read()
+   #     if not success:
+    #        break
+     #   else:
+      #      ret, buffer=cv2.imencode('.jpg', frame)
+       #     frame=buffer.tobytes()
+        #
+        #yield(b'--frame\r\n'
+         #     b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
 @app.route('/')
@@ -178,9 +185,9 @@ def add_student():
 def classes():
     return render_template('classes.html')
 
-@app.route('/video/')
-def video():
-    return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
+#@app.route('/video/')
+#def video():
+ #   return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
