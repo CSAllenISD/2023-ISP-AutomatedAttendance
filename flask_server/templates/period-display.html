@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Dashboard</title>
-        <link rel="stylesheet" href="css/period-display.css" />
-        <link rel="icon" type="image/png" href='{{url_for('static',filename='images/projectlogo.png/')}}'>
+        <link rel="stylesheet" href='{{url_for('static',filename='css/period-display.css')}}' />
+        <link rel="icon" type="image/png" href='{{url_for('static',filename='images/projectlogo.png')}}' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
 
         <section id="sidebar">
-            <img src="images/projectlogo.png" class="logo">
+            <img src='{{url_for('static',filename='images/projectlogo.png')}}' class="logo">
             <div class="items">
                 <ul>
                     <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
@@ -49,14 +49,14 @@
 
                         <tbody>
                             <tr>
-                                <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
+                                <td> <img src='{{url_for('static',filename='images/profilepicturetemp.png')}}' alt=""> LaQuesha D'Shawnte </td>
                                 <td> 243658 </td>
                                 <td> 12 </td>
                                 <td> <a href="/" class="table-link">Edit</a> </td>
                             </tr>
 
                             <tr>
-                                <td> <img src="images/childTantrum-168269757-770x553-1-650x428.jpeg" alt=""> Ayaan Cashapp </td>
+                                <td> <img src='{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}' alt=""> Ayaan Cashapp </td>
                                 <td> 247865 </td>
                                 <td> K </td>
                                 <td> <a href="/" class="table-link">Edit</a> </td>
@@ -113,7 +113,7 @@
                                                 <span class="checkmark"></span>
                                             </label> 
                                         </td>
-                                        <td> <img src="images/profilepicturetemp.png" alt=""> LaQuesha D'Shawnte </td>
+                                        <td> <img src='{{url_for('static',filename='images/profilepicturetemp.png')}}' alt=""> LaQuesha D'Shawnte </td>
                                         <td> 243658 </td>
                                         <td> 12 </td>
                                     </tr>
@@ -125,7 +125,7 @@
                                                 <span class="checkmark"></span>
                                             </label>
                                         </td>
-                                        <td> <img src="images/childTantrum-168269757-770x553-1-650x428.jpeg" alt=""> Ayaan Cashapp </td>
+                                        <td> <img src='{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}' alt=""> Ayaan Cashapp </td>
                                         <td> 247865 </td>
                                         <td> K </td>
                                     </tr>
@@ -139,7 +139,7 @@
                 </div>
               
               </div>
-              <script src="add-student.js"></script>
+              <script src='{{url_for('static',filename='javascript/add-student.js')}}'></script>
         </section>
 
         

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#1D1D1D, #000000);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.nav-items {
+  height: 100px;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0rem calc((100vw - 1850px) / 2);
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 0 1.5rem;
+}
+
+nav a:link, a:visited{
+  color: #fff;
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+nav a:hover, a:active {
+  background-size: 60% 0.1em;
+}
+
+.hero {
+  background: transparent;
+}
+
+.hero-container {
+  text-align: center;
+  height: 95vh;
+  padding: 0.83vw calc((100vw - 1600px) / 2);
+}
+
+p {
+  color: #fff;
+}
+
+.heading {
+  margin-top: -50px;
+  margin-bottom: 3rem;
+  font-size: 5vw;
+  padding: 1rem 1rem;
+  font-weight: bold;
+  color: #8685ef;
+}
+
+.hero-container button {
+  padding: 1rem 3rem;
+  font-size: 1.5vw;
+  font-family: 'Circular', sans-serif;
+  font-weight: lighter;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  color:#fff;
+  background: #8685ef;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.hero-container button:hover {
+  background: #fff;
+  color: #000
+}
+
+.hero-container a, a:active, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-container a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.form-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__label {
+  color: #8685ef;
+  margin-bottom: 0.7rem;
+  font-size: 1vw;
+  transition: all 0.3s;
+}
+
+.form-control {
+  font-family: 'Outfit', sans-serif;
+  color: #001220;
+  padding: 1vw 1.5vw;
+  margin-bottom: 7px;
+  font-size: 1vw;
+  border-radius: 0.16vw;
+  background-color: #efedf0;
+  border: none;
+  width: 41.6vw;
+  border-bottom: 0.25vw solid transparent;
+  transition: all 0.3s;
+}
+
+.form-control:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+
+input[type='password'] {
+    font-family: Verdana;
+    letter-spacing: 0.125em;
+}
+
+.form-control::placeholder {
+    font-family: 'Outfit',sans-serif;
+    letter-spacing: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+      grid-template-columns: 1fr;
+  }
+}
