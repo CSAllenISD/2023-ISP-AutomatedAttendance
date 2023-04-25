@@ -1,99 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+* {
+    font-family: 'Outift', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-30%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
 body {
-    background-color: #2e2d33;
-    font-family: 'Circular',sans-serif;
-
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#1D1D1D, #000000);
+    background-size: cover;
+    overflow-x: hidden;
+    background-attachment: fixed;
 }
 
-/* Font Coloring for Landing Page */
-p {
-    color: #efedf0;
-}
-
-/* Heading Attributes */
-.heading {
-    font-weight: 400;
-    color: #efedf0;
-    text-align: left;
-    font-size: 72px;
-    letter-spacing: 0.05em;
-    line-height: 130%;
-    margin: 10% 0 0 15%;
-}
-
-/* Plant Image Attributes */
-.plant {
-    height: auto;
-    float: right;
+.bubble {
+    width: 150%;
+    height: 150%;
+    background-color: #242331;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: 570px;
+    left: -25%;
+    right: 0;
     position: absolute;
     z-index: -1;
-    max-width: 120%;
-    margin: -31% 12% 0 0;
 }
 
-/* Woman Image Attributes */
-.woman {
-    height: auto;
-    float: right;
-    max-width: 40%;
-    margin: -30% 10% 0 0;
+.bubble-middle {
+    width: 150%;
+    height: 150%;
+    background-color: #44425C;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: calc(570px + 700px);
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
-/* Man Image Attributes */
-.yellowhoodie {
-    height: auto;
-    float: right;
-    max-width: 45%;
-    margin: -30% 5% 0 0;
+.bubble-bottom {
+    width: 150%;
+    height: 150%;
+    background-color: #67648B;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: calc(1270px + 700px);
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
-/* Login Button Attributes */
-.login {
-  
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 14px 68.5px;
-    margin: 5% 0 0 21%;
-    cursor: pointer;
+.bubble h1 {
+    padding: 300px;
+    text-align: center;
     color: #fff;
-    background-color: #f21a4c;
-    font-size: 1.5rem;
-    font-family: 'Circular',sans-serif;
-    font-weight: 100;
-    border: 3px solid #f21a4c;
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
 }
 
-  /* Properties of Login Button Hover */ 
-  .login:hover {
-    background-color: #c5133d;
+nav {
+    animation: .5s ease-out 0s 1 slideInDown;
+    height: 80px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1400px) / 2);
+}
+
+.logo {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    padding: 0 1.5rem;
+}
+
+.logo-image {
+    width: 48px;
+    height: auto;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #8685ef;
+    padding: 0 1.5rem;
+}
+
+nav a:link, a:visited{
+    color: #8685ef;
+    background-image: linear-gradient(#fff, #fff);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    padding: .7rem;
+    transition: background-size 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+nav a:nth-child(1) {
     color: #fff;
-    border: 3px solid #c5133d;
-  }
+    background-image: linear-gradient(#8685ef, #8685ef);
+}
 
+nav a:hover, a:active {
+    background-size: 60% 0.1em;
+}
 
-/* Properties of Sign Up Button */
-  .signup {
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 14px 60px;
-    margin: 2% 0 0 21%;
-    cursor: pointer;
-    color: #000;
-    background-color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Circular',sans-serif;
-    font-weight: 100;
-    border: 3px solid #fFF;
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-  }
-  
-  /* Properties of Sign Up Button Hover */
-  .signup:hover {
-    background-color: #d7d5d5;
-    color: #000;
-    border: 3px solid #d7d5d5;
-  }
+nav a:hover:nth-child(1), a:active {
+    background-size: 60% 0.1em;
+}
+
+.hero {
+    background: transparent;
+}
+
+.hero-container {
+    width: calc(100% - 300px);
+    margin-left: 150px;
+    height: 100%;
+    padding: 7rem;
+    color: #fff;
+    text-align: center;
+}
+
+.title {
+    padding: 0 3rem 3rem 3rem;
+}
+
+.hero-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.hero-container h3 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: lighter;
+}
+
+.hero-container a {
+    text-decoration: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color:#fff;
+    background: #8585ef;
+    border-radius: 50px;
+}
+
+.hero-container a:hover {
+    background: #fff;
+    color: #000
+}
+
+@media screen and (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+}

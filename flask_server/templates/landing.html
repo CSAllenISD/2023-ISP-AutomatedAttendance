@@ -2,19 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Facial Recognition</title>
-        <link rel="stylesheet" type="text/css" href="landing.css">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Automated Attendance</title>
+        <link rel="stylesheet" href='{{url_for('static',filename='css/landing.css')}}' />
+        <link rel="icon" type="image/png" href="'{{url_for('static',filename='images/landing.css')}}'"/>
     </head>
     <body>
-        <h1 class="heading">Automated<br>Attendance</h1>
+        <nav>
+            <div class="logo"><img src="images/projectlogo.png" class="logo-image"></div>
+            <div class="nav-items">
+                <a href="login.html">Log In</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="title">
+                    <h1>Streamline <span style="color: #8685ef">Attendance</span> Tracking With <span style="color: #8685ef">Facial Recognition</span> Technology</h1>
+                    <h3>Eliminate errors and improve efficiency with our cutting-edge facial recognition attendance system</h3>
+                </div>
+                <a href="signup.html" class="get-started">Get Started</a>
+            </div>
+        </section>
+        <section class="bubble">
+            
+        </section>
+        <section class="bubble-middle">
 
-        <a href="login.html">
-        <button class="login" type="button">Log In</button>
-        </a>
-        <br>
-        <button class="signup" type="button">Sign Up</button>
-
-        <img src="images/yellowhoodie.png" class="yellowhoodie" alt="Yellow Hoodie">
-</body>
+        </section>
+        <section class="bubble-bottom">
+            
+        </section>
+    </body>
 </html>

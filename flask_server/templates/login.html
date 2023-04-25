@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+    %}
+    <form method="POST">
+      <div class="hero-container">
+        <h1 class="heading">Log In</h1>
+        <div class="form-group">
+          <div class="form-wrapper">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email" required=""/>
+            <label for="email" class="form__label">Email</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required=""/>
+            <label for="password" class="form__label">Password</label>
+          </div>
+        </div>
+            <button>Log In</button>
+        <p class="if-you-have">Or if you havent made an account, <a href="/sign-up">Sign Up.</a></p>
+      </div>
+    </form>
+    {% endblock %}<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
