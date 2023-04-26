@@ -5,6 +5,7 @@ var modalBtn = document.getElementsByClassName("modal__btn")[0];
 
 var editModeBtn = document.getElementById("editModeBtn");
 var saveBtn = document.getElementById("saveBtn");
+var cancelBtn = document.getElementById("cancelBtn")
 var td = document.querySelectorAll("[id='removeButton']");
 var editableText = document.getElementById("edit");
 
@@ -14,6 +15,7 @@ editModeBtn.onclick = function() {
   
   editModeBtn.style.display = "none";
   saveBtn.style.display = "inline-block";
+  cancelBtn.style.display = "inline-block";
 }
 
 saveBtn.onclick = function() {
@@ -22,6 +24,16 @@ saveBtn.onclick = function() {
   
   editModeBtn.style.display = "inline-block";
   saveBtn.style.display = "none";
+  cancelBtn.style.display = "none";
+}
+
+cancelBtn.onclick = function() {
+  for(var i = 0; i < td.length; i++)
+    td[i].style.display = "none";
+  
+  editModeBtn.style.display = "inline-block";
+  saveBtn.style.display = "none";
+  cancelBtn.style.display = "none";
 }
 
 function studentCount() {
