@@ -85,7 +85,7 @@ a,a:visited {
     font-weight: 700;
 }
 
-#main-content .welcome-name h1 {
+#main-content .welcome-name span {
     color: #8685ef;
     font-size: 4rem;
 }
