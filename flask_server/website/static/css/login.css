@@ -132,7 +132,7 @@ p {
 .form-control:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
-  -webkit-transform: translateY(-4rem);
+  -webkit-transform: translateY-(4rem);
   transform: translateY(-4rem);
 }
 

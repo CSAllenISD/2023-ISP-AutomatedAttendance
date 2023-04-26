@@ -11,14 +11,12 @@
     <body>
 
         <section id="sidebar">
-            <img src="images/projectlogo.png" class="logo">
+            <img src="{{ url_for('static', filename ='images/projectlogo.png') }}" class="logo">
             <div class="items">
                 <ul>
                     <li><a href="/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a></li>
                     <li><i class="fa-solid fa-folder"></i> Classes</li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
-                    <li><a href="/add-student/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
-                    <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
                     <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
@@ -42,14 +40,24 @@
             </div>
 
             <div class="create-buttons">
-                <a href="Newclass.html">
+                <!--<a href="Newclass.html">
                     <div class="new-class-button">
                         <div class="new-class-button-wrapper">
                             <i class="fa-solid fa-plus"></i>
                             New Class
                         </div>
                     </div>
-                </a>
+                </a> -->
+             <button type="submit" class="new-class-button">
+                <form method="POST">
+                    <div align="center">
+                      <div class="new-class-button-wrapper">
+                        <i class="fa-solid fa-plus"></i>
+                        New Class
+                      </div>
+                    </div>
+                </button>    
+            </form>
 
                 <a href="/">
                     <div class="edit-classes-button">
