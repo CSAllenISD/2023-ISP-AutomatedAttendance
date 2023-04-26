@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash
 from flask_login import login_required, current_user
 from . import db, HOST_NAME, HOST_PORT, getstudents
+from .models import Period
 
 views = Blueprint('views', __name__)
 
@@ -15,35 +16,35 @@ def landing_page():
 def dashboard():
     return render_template("dashboard.html", user=current_user)
 
-@views.route('/P1/')
+@views.route('/p1/')
 def P1():
   # (C1) GET ALL students
     students = getstudents('Period1')
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
-@views.route('/P2/')
+@views.route('/p2/')
 def P2():
   # (C1) GET ALL students
     students = getstudents('Period2')
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
-@views.route('/P3/')
+@views.route('/p3/')
 def P3():
   # (C1) GET ALL students
     students = getstudents('Period3')
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
-@views.route('/P4/')
+@views.route('/p4/')
 def P4():
   # (C1) GET ALL students
     students = getstudents('Period4')
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
-@views.route('/P5/')
+@views.route('/p5/')
 def P5():
   # (C1) GET ALL students
     students = getstudents('Period5')
@@ -56,6 +57,15 @@ def add_student():
 
 @views.route('/classes/')
 def classes():
+    if request.method == 'POST': 
+        period = request.form.get('period')#Gets the periods from the database
+        
+    else:
+        new_period = Period(data=period, user_id=current_user.id)  #providing the schema for the period  
+        db.session.add(new_period) #adding the period to the database 
+        db.session.commit()
+        flash('Period added!', category='success')
+        
     return render_template('classes.html')
 
 #@app.route('/video/')
@@ -67,15 +77,15 @@ def classes():
 def FAQ():
     return render_template('FAQ.html')
   
-@views.route('/AttendanceRep/')
+@views.route('/attendance-rep/')
 def AttendanceReport():
     return render_template('AttendanceReport.html')
     
-@views.route('/Help/')
+@views.route('/help/')
 def HelpSupport():
     return render_template('HelpSupport.html')
     
-@views.route('/Student-Info/')
+@views.route('/student-info/')
 def StudentInformation():
     return render_template('Student-Information.html')
     
