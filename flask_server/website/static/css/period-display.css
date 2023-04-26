@@ -291,6 +291,7 @@ tbody tr:hover {
 }
 
 .create-buttons .save-classes-button {
+    margin-right: 20px;
     background: #8685ef;
     color: #cacaca;
     width: 180px;
@@ -313,6 +314,36 @@ tbody tr:hover {
 }
 
 .save-classes-button-wrapper {
+    padding: 5px 10px;
+}
+
+#cancelBtn {
+    display: none;
+}
+
+.create-buttons .cancel-classes-button {
+    background: #8685ef;
+    color: #cacaca;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
+.create-buttons .cancel-classes-button:hover {
+    background: #cacaca;
+    color: #8685ef;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
+.cancel-classes-button-wrapper {
     padding: 5px 10px;
 }
 
