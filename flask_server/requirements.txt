@@ -1,12 +1,12 @@
 # create virtual environment
 # open environment
-# Download cmake and set correct path
+# go to dlib-19.24 and enter: python setup.py install
 # pip install -r requirements.txt
 
 flask
 cmake
-dylib==19.22 # i had to use --pre --no-build-isolation
+dylib==19.22 
 opencv-python
 face_recognition
 
-# gotta try other one once more
+# gotta try other one once more 

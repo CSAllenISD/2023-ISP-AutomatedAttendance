@@ -1,4 +1,0 @@
-enable_language(CXX)
-file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/info.cmake" "
-set(CMAKE_CXX_EXTENSIONS_DEFAULT \"${CMAKE_CXX_EXTENSIONS_DEFAULT}\")
-")
