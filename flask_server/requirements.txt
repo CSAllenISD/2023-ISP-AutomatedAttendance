@@ -13,3 +13,4 @@ face_recognition
 sqlalchemy #?
 
 
+# gunicorn

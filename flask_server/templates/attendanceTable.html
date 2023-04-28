@@ -1,7 +1,7 @@
 {% extends 'dashboard.html' %} 
-
+ 
 {% block content %}
-    <form method="post">
+     <form method="post"> 
         <label for="title">Title</label>
         <br>
         <input type="text" name="student_name"
@@ -17,5 +17,5 @@
                   <textarea>{{ request.form['student_id'] }}</textarea>
         <br>
         <button type="submit">Submit</button>
-    </form>
-{% endblock %} 
+    </form>   
+{% endblock %}  
