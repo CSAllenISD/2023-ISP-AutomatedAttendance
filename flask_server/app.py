@@ -4,6 +4,7 @@ import os
 import cv2
 import face_recognition
 import numpy as np
+import datetime
 
 app = Flask(__name__)
 camera = cv2.VideoCapture(0)
@@ -11,14 +12,14 @@ app.config['SECRET_KEY'] = 'your secret key'
 
 HOST_NAME = "localhost"
 HOST_PORT = 80
-DBFILE = "User1.db"
+DBFILE = "flask_server/User1.db"
 
 # Load a sample picture and learn how to recognize it.
-obama_image = face_recognition.load_image_file("faces/obama.jpg")
+obama_image = face_recognition.load_image_file("flask_server/faces/obama.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-william_image = face_recognition.load_image_file("faces/william.jpg")
+william_image = face_recognition.load_image_file("flask_server/faces/william.jpg")
 william_face_encoding = face_recognition.face_encodings(william_image)[0]
 
 # Create arrays of known face encodings and their names
@@ -40,7 +41,7 @@ process_this_frame = True
 # webpage camera
 
 
-def gen_frames():
+def gen_frames(period):
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:
@@ -71,6 +72,7 @@ def gen_frames():
                     name = known_face_names[best_match_index]
 
                 face_names.append(name)
+                update_attendance(period,name)
 
             # Display the results
             for (top, right, bottom, left), name in zip(face_locations, face_names):
@@ -105,6 +107,20 @@ def getstudents(period):
     conn.close()
     return results
 
+def update_attendance(period,stu_name):
+    # Connect to the database
+    conn = sqlite3.connect(DBFILE)
+    c = conn.cursor()
+
+    # get the current period
+    c.execute("SELECT * FROM " + period)
+    results = c.fetchall()
+    
+    # Update attendance
+    c.execute("UPDATE Period1 SET stu_attendance = ? WHERE stu_name= ?", ("Present", stu_name))
+    conn.commit()
+    c.close()
+    conn.close()
 
 @app.route('/')
 def landing_page():
@@ -180,12 +196,28 @@ def classes():
 
 @app.route('/video/')
 def video():
-    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    period = 'Period1'
+    now = datetime.datetime.now().time()
+    if (now.hour == 8 and 30 <= now.minute) or (now.hour == 9 and now.minute < 45):
+        period = 'Period1'
+    elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and min < 25):
+        period = 'Period2'
+    elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and min < 30):
+        period = 'Period3'
+    elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and min < 10):
+        period = 'Period4'
+    elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and min < 10):
+        period = 'Period8'
+    else:
+        period = 'Period1' #testing purposes 
 
+    return Response(gen_frames(period), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/FAQ/')
 def FAQ():
     return render_template('FAQ.html')
+
 
 if __name__ == '__main__':
     app.run(HOST_NAME, HOST_PORT)
