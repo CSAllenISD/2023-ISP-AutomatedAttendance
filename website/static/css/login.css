@@ -61,12 +61,13 @@ p {
   color: #fff;
 }
 
-h1 {
+.heading {
+  margin-top: -50px;
   margin-bottom: 3rem;
   font-size: 5vw;
   padding: 1rem 1rem;
   font-weight: bold;
-  color: #fff;
+  color: #8685ef;
 }
 
 .hero-container button {
@@ -74,6 +75,7 @@ h1 {
   font-size: 1.5vw;
   font-family: 'Circular', sans-serif;
   font-weight: lighter;
+  margin-top: 20px;
   margin-bottom: 20px;
   border: none;
   color:#fff;
@@ -107,19 +109,17 @@ h1 {
 }
 
 .form__label {
-  font-family: 'Outfit', sans-serif;
-  color: #001220;
-  margin-top: 0.7rem;
+  color: #8685ef;
+  margin-bottom: 0.7rem;
   font-size: 1vw;
   transition: all 0.3s;
-  transform: translateY(0rem);
 }
 
 .form-control {
   font-family: 'Outfit', sans-serif;
   color: #001220;
-  margin-bottom: 20px;
   padding: 1vw 1.5vw;
+  margin-bottom: 7px;
   font-size: 1vw;
   border-radius: 0.16vw;
   background-color: #efedf0;

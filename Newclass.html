@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a New Class</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" />
+    <link rel="stylesheet" href="Newclass.css" />
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="logo">
+        <h2>Logo</h2>
+      </div>
+      <ul class="items">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Classes</a></li>
+        <li><a href="#">Students</a></li>
+      </ul>
+    </div>
+    <div id="main-content">
+      <h1 class="welcome-name">Create a New Class</h1>
+      <form>
+        <label for="class-name">Class Name:</label>
+        <input type="text" id="class-name" name="class-name" required />
+
+        <label for="period">Period:</label>
+        <select id="period" name="period">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+
+        <div class="create-buttons">
+          <div class="edit-classes-button-wrapper">
+            <a href="classes.html" class="edit-classes-button"><i class="fas fa-edit"></i>Create Class</a>
+          </div>
+          <div class="new-class-button-wrapper">
+            <a href="add-student.html" class="new-class-button"><i class="fas fa-plus"></i>Add Students</a>
+          </div>
+          <div class="edit-classes-button-wrapper">
+            <a href="classes.html" class="edit-classes-button"><i class="fas fa-edit"></i>Back to Classes</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+        const createClassButton = document.querySelector('.create-buttons .edit-classes-button-wrapper');
+        createClassButton.addEventListener('click', function() {
+          const className = document.querySelector('#class-name').value;
+          const classPeriod = document.querySelector('#period').value;
+          const newClass = {
+            name: className,
+            period: classPeriod
+          };
+          let classes = JSON.parse(localStorage.getItem('classes')) || [];
+          classes.push(newClass);
+          localStorage.setItem('classes', JSON.stringify(classes));
+        });
+      </script>
+      
+  </body>
+</html>

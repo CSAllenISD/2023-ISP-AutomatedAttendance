@@ -30,14 +30,17 @@
             </h1>
 
             <div class="class-periods" id="class-periods-container">
+                {% for class in classes %}
                 <a href="period-display.html">
-                <div class="class-boxes">
+                  <div class="class-boxes">
                     <div>
-                        <span>Period 1</span>
-                        <h3># students</h3>
+                      <span>Period {{ class[2] }}</span>
+                      <h3>{{ class[1] }}</h3>
                     </div>
                     <i class="fa-solid fa-arrow-right-long"></i>
-                </div>
+                  </div>
+                </a>
+                {% endfor %}
                 </a>
             </div>
 
