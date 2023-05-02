@@ -4,6 +4,32 @@
   <meta charset="UTF-8">
   <title>Attendance Report</title>
   <link rel="stylesheet" href="attendancereport.css">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    function showAttendanceDropdown(btn) {
+      var attendanceCell = btn.parentNode.previousElementSibling;
+      var attendanceStatus = attendanceCell.textContent.trim();
+      var attendanceDropdown = document.createElement('select');
+      attendanceDropdown.innerHTML = `
+        <option value="present">Present</option>
+        <option value="absent">Absent</option>
+        <option value="tardy">Tardy</option>
+      `;
+      attendanceDropdown.value = attendanceStatus;
+      attendanceDropdown.addEventListener('change', function() {
+        attendanceCell.textContent = this.value;
+        attendanceCell.appendChild(btn);
+        this.parentNode.removeChild(this);
+      });
+      attendanceCell.textContent = '';
+      attendanceCell.appendChild(attendanceDropdown);
+      btn.parentNode.removeChild(btn);
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -15,8 +41,6 @@
         <option value="class2">Class 2</option>
         <option value="class3">Class 3</option>
       </select>
-      <label for="date">Date:</label>
-      <input type="date" id="date" name="date">
       <button type="submit">Filter</button>
     </form>
     <table>
@@ -24,45 +48,33 @@
         <tr>
           <th>Student Name</th>
           <th>Attendance Status</th>
-          <th>Date</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>John Doe</td>
+          <td>Present</td>
           <td>
-            <select>
-              <option value="present">Present</option>
-              <option value="absent">Absent</option>
-              <option value="tardy">Tardy</option>
-            </select>
+            <button onclick="showAttendanceDropdown(this)">Update</button>
           </td>
-          <td>01/01/2023</td>
         </tr>
         <tr>
           <td>Jane Smith</td>
+          <td>Absent</td>
           <td>
-            <select>
-              <option value="present">Present</option>
-              <option value="absent">Absent</option>
-              <option value="tardy">Tardy</option>
-            </select>
+            <button onclick="showAttendanceDropdown(this)">Update</button>
           </td>
-          <td>01/01/2023</td>
         </tr>
         <tr>
           <td>Bob Johnson</td>
+          <td>Tardy</td>
           <td>
-            <select>
-              <option value="present">Present</option>
-              <option value="absent">Absent</option>
-              <option value="tardy">Tardy</option>
-            </select>
+            <button onclick="showAttendanceDropdown(this)">Update</button>
           </td>
-          <td>01/01/2023</td>
         </tr>
       </tbody>
     </table>
   </div>
 </body>
-</html> 
+</html>
