@@ -23,14 +23,20 @@ obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 william_image = face_recognition.load_image_file("flask_server/faces/william.jpg")
 william_face_encoding = face_recognition.face_encodings(william_image)[0]
 
+izzy_image = face_recognition.load_image_file("flask_server/faces/izzy.jpg")
+izzy_face_encoding = face_recognition.face_encodings(izzy_image)[0]
+
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
-    william_face_encoding
+    william_face_encoding,
+    izzy_face_encoding
 ]
 known_face_names = [
     "Barack Obama",
-    "William Clymire"
+    "William Clymire",
+    "Isabelle Holden"
 ]
 
 # Initialize some variables

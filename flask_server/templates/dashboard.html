@@ -61,15 +61,13 @@
             </div>
         </section>
 
-        <!-- <script>
-           function refreshDialer() {
-                var container = document.getElementById('content-right');
-                container.innerHTML = container.innerHTML;
-}
-       //this line is to watch the result in console , you can remove it later	
-            console.log("Refreshed"); 
-        </script> -->
-        <section id="content-right">
+    <script>
+    function updateDiv(){ 
+        $( "#here" ).load(window.location.href + " #here" );
+        alert("farts");
+    }
+    </script>
+        <section id="content-right" onclick="updateDiv()">
             <div class="table-box">
                 {% block content %} {% endblock %}
             </div>
