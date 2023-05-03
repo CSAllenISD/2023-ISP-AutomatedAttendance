@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Live Facial Recognition</title>
+    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      const video = document.createElement('video');
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      let classifier;
+
+      function onOpenCvReady() {
+        classifier = new cv.CascadeClassifier();
+        classifier.load('haarcascade_frontalface_default.xml');
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then((stream) => {
+            video.srcObject = stream;
+            video.play();
+          })
+          .catch((err) => {
+            console.log(`Error: ${err}`);
+          });
+        video.addEventListener('canplay', () => {
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          detectFaces();
+        });
+      }
+
+      function detectFaces() {
+        const src = new cv.Mat(video.videoHeight, video.videoWidth, cv.CV_8UC4);
+        const dst = new cv.Mat(video.videoHeight, video.videoWidth, cv.CV_8UC1);
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        cv.imshow(src, imageData);
+        cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+        const faces = new cv.RectVector();
+        const scaleFactor = 1.2;
+        const minNeighbors = 3;
+        const flags = 0;
+        const minSize = new cv.Size(30, 30);
+        classifier.detectMultiScale(dst, faces, scaleFactor, minNeighbors, flags, minSize);
+        for (let i = 0; i < faces.size(); i++) {
+          const faceRect = faces.get(i);
+          const point1 = new cv.Point(faceRect.x, faceRect.y);
+          const point2 = new cv.Point(faceRect.x + faceRect.width, faceRect.y + faceRect.height);
+          cv.rectangle(src, point1, point2, [0, 255, 0, 255]);
+        }
+        cv.imshow(canvas, src);
+        requestAnimationFrame(detectFaces);
+      }
+    </script>
+  </body>
+</html>

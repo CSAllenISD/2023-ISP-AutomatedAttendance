@@ -6,7 +6,7 @@
         <th>
             <tr>
                 <td class="heading">
-                    <h3>PeriodName</h3>
+                    <h3>Class</h3>
                 </td> <!-- Current class period -->
             </tr>
         </th>
@@ -14,7 +14,7 @@
     {% for s in student %}
         <tr>
             <td class="status">
-                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle {{ s[2] }}"></i>
             </td>   
             <td class="student-name">
                 <div class="student-de">

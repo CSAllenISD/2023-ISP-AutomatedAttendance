@@ -5,6 +5,7 @@ import cv2
 import face_recognition
 import numpy as np
 import datetime
+import time
 
 app = Flask(__name__)
 camera = cv2.VideoCapture(0)
@@ -148,6 +149,7 @@ def dashboard():
 def P1():
     # (C1) GET ALL students
     students = getstudents('Period1')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -156,6 +158,7 @@ def P1():
 def P2():
     # (C1) GET ALL students
     students = getstudents('Period2')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -164,6 +167,7 @@ def P2():
 def P3():
     # (C1) GET ALL students
     students = getstudents('Period3')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -172,14 +176,16 @@ def P3():
 def P4():
     # (C1) GET ALL students
     students = getstudents('Period4')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
-
-@app.route('/P5/')
+# check if this one exists
+@app.route('/P8/')
 def P5():
     # (C1) GET ALL students
-    students = getstudents('Period5')
+    students = getstudents('Period8')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -200,13 +206,13 @@ def video():
     now = datetime.datetime.now().time()
     if (now.hour == 8 and 30 <= now.minute) or (now.hour == 9 and now.minute < 45):
         period = 'Period1'
-    elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and min < 25):
+    elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and now.minute < 25):
         period = 'Period2'
-    elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and min < 30):
+    elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and now.minute < 30):
         period = 'Period3'
-    elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and min < 10):
+    elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and now.minute < 10):
         period = 'Period4'
-    elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and min < 10):
+    elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and now.minute < 10):
         period = 'Period8'
     else:
         period = 'Period1' #testing purposes 
