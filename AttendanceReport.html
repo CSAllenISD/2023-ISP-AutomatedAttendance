@@ -12,6 +12,7 @@
   <script>
     function showAttendanceDropdown(btn) {
       var attendanceCell = btn.parentNode.previousElementSibling;
+      var originalColumn = attendanceCell.parentNode.children[2];
       var attendanceStatus = attendanceCell.textContent.trim();
       var attendanceDropdown = document.createElement('select');
       attendanceDropdown.innerHTML = `
@@ -22,7 +23,8 @@
       attendanceDropdown.value = attendanceStatus;
       attendanceDropdown.addEventListener('change', function() {
         attendanceCell.textContent = this.value;
-        attendanceCell.appendChild(btn);
+        originalColumn.appendChild(btn);
+        originalColumn.insertBefore(attendanceCell, btn.parentNode);
         this.parentNode.removeChild(this);
       });
       attendanceCell.textContent = '';
