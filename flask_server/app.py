@@ -1,6 +1,6 @@
-from recognition import FaceRecognition
-# pip install cmake dlib==19.22
+from website import create_app
+
+app = create_app()
 
 if __name__ == '__main__':
-    fr = FaceRecognition()
-    fr.run_recognition()
+    app.run(debug=True)

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, Response
 from flask_login import login_required, current_user
 from flask_server.website import gen_frames
-from . import db, HOST_NAME, HOST_PORT, getstudents
+from .. import db, HOST_NAME, HOST_PORT, getstudents
 import cv2
 import datetime
 import time

@@ -58,15 +58,16 @@ def getstudents(period):
   results = cursor.fetchall()
   conn.close()
   return results
+# temp because i cant commit
 
-obama_image = face_recognition.load_image_file("flask_server/faces/obama.jpg")
+obama_image = face_recognition.load_image_file("website/faces/obama.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-william_image = face_recognition.load_image_file("flask_server/faces/william.jpg")
+william_image = face_recognition.load_image_file("website/faces/william.jpg")
 william_face_encoding = face_recognition.face_encodings(william_image)[0]
 
-izzy_image = face_recognition.load_image_file("flask_server/faces/izzy.jpg")
+izzy_image = face_recognition.load_image_file("website/faces/izzy.jpg")
 izzy_face_encoding = face_recognition.face_encodings(izzy_image)[0]
 
 
