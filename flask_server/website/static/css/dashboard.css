@@ -130,6 +130,14 @@ body {
     box-shadow: 0 .4rem .8rem #0005;
 }
 
+.Present{
+    color: green;
+}
+
+.Absent{
+    color: red;
+}
+
 #content-right {
     width: 400px;
     height: 100%;
@@ -159,7 +167,6 @@ body {
 }
 
 .status i {
-    color: red;
     width: 24px;
     height: auto;
 }

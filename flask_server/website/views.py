@@ -1,10 +1,13 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, Response
 from flask_login import login_required, current_user
-from . import db, HOST_NAME, HOST_PORT, getstudents
+from website import gen_frames
+from .. import db, HOST_NAME, HOST_PORT, getstudents
+import cv2
+import datetime
+import time
+
 
 views = Blueprint('views', __name__)
-
-
 @views.route('/', methods=['GET', 'POST'])
 def landing_page():
     return render_template("landing.html")
@@ -19,6 +22,7 @@ def dashboard():
 def P1():
   # (C1) GET ALL students
     students = getstudents('Period1')
+    time.sleep(1.0)  
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -26,6 +30,7 @@ def P1():
 def P2():
   # (C1) GET ALL students
     students = getstudents('Period2')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -33,6 +38,7 @@ def P2():
 def P3():
   # (C1) GET ALL students
     students = getstudents('Period3')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -40,13 +46,15 @@ def P3():
 def P4():
   # (C1) GET ALL students
     students = getstudents('Period4')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
-@views.route('/P5/')
+@views.route('/P8/')
 def P5():
   # (C1) GET ALL students
-    students = getstudents('Period5')
+    students = getstudents('Period8')
+    time.sleep(1.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -58,14 +66,6 @@ def add_student():
 def classes():
     return render_template('classes.html')
 
-#@app.route('/video/')
-#def video():
- #   return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
-@views.route('/classes/')
-def FAQ():
-    return render_template('FAQ.html')
   
 @views.route('/AttendanceRep/')
 def AttendanceReport():
@@ -95,3 +95,23 @@ def periods():
 @views.route('/temp-period/')
 def temp():
     return render_template('temp.html')
+
+@views.route('/video/')
+def video():
+    period = 'Period1'
+    now = datetime.datetime.now().time()
+    if (now.hour == 8 and 30 <= now.minute) or (now.hour == 9 and now.minute < 45):
+        period = 'Period1'
+    elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and now.minute < 25):
+        period = 'Period2'
+    elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and now.minute < 30):
+        period = 'Period3'
+    elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and now.minute < 10):
+        period = 'Period4'
+    elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and now.minute < 10):
+        period = 'Period8'
+    else:
+        period = 'Period1' #testing purposes 
+
+    return Response(gen_frames(period), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')

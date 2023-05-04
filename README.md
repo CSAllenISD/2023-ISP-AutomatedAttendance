@@ -3,8 +3,8 @@
 ## Project Description: 
    Our ISP project is an automated attendance system that functions with the use of facial recognition AI. We intend to design this product to be of use in environments where attendance is required, such as school. We aim to replace the current attendance system with a more efficient and accurate attendance system. This will be done with a camera that will be located by the entrance of the room which will utilize facial recognition software to compare the captured face with other faces in a database to automatically complete attendance. This new system will eliminate the need for teachers or even companies to waste time on attendance or even potentially make human errors with the attendance. I have high hopes for our group and our ISP project as I believe it will be a fun but also challenging project to partake in. 
 
-## Product Manager: 
-  -Akshay Vemulapalli
+## Project Manager: 
+  -William Clymire
   
 ## Project Manager:
   -William Clymire
@@ -20,6 +20,10 @@
   -Serenity Underwood
   
   -Cameron Farley
+
+  -Akshay Vemulapalli
+
+  -William Clymire
 
 ## QA Engineers:
   -Cameron Farley
@@ -73,4 +77,4 @@ Artistic rules:
     button highlight color: #fff
     font family: 'Circular',sans-serif
 
->>>>>>> 00ada298b51b7c0a1d012ef8fc72b731c42e0901
+
