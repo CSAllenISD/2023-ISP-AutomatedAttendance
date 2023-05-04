@@ -4,29 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Dashboard</title>
+        <link rel="stylesheet" href='{{url_for('static',filename='css/classes.css')}}' />
+        <link rel="icon" type="image/png" href="{{url_for('static',filename='images/projectlogo.png')}}"/>
         <script src="{{url_for('static',filename='javascript/time.js')}}"></script>
-        <link rel="stylesheet" href="{{url_for('static',filename='css/classes.css')}}" />
-        <link rel="icon" type="image/png" href={{url_for('static',filename='images/projectlogo.png')}}/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
 
         <section id="sidebar">
-            <img src="{{url_for('static',filename='images/projectlogo.png')}}" class="logo">
+            <img src="{{url_for('static',filename='{{ url_for('static', filename ='images/projectlogo.png')}}') }}" class="logo">
             <div class="items">
-                <script>
-                    function nextPage(page) {
-                        window.location.href=page;
-                    }
-                </script>
-                <ul> 
-                    <!-- currently hardcoding dashboard to table1 -->
-                    <li onclick='changePeriod()'><a><i class="fa-solid fa-folder"></i> Dashboard</a></li> 
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <!-- make dashboard.html go to the correct one -->
                     <li><i class="fa-solid fa-folder"></i> Classes</li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
-                    <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
-                    <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                    <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </section>
@@ -36,8 +29,8 @@
                 Classes
             </h1>
 
-            <div class="class-periods">
-                <a href="period-display.html">
+            <div class="class-periods" id="class-periods-container">
+                <a href="/periods/">
                 <div class="class-boxes">
                     <div>
                         <span>Period 1</span>
@@ -49,7 +42,7 @@
                 <!-- {% block class %}{% endblock %} -->
             </div>
             <div class="create-buttons">
-                <a href="/">
+                <a href="Newclass.html">
                     <div class="new-class-button">
                         <div class="new-class-button-wrapper">
                             <i class="fa-solid fa-plus"></i>
@@ -68,6 +61,24 @@
                 </a>
             </div>
         </section>
-
+        <script>
+            const classPeriodsContainer = document.querySelector('#class-periods-container');
+            let classes = JSON.parse(localStorage.getItem('classes')) || [];
+            classes.forEach(function(cls) {
+              const classBox = document.createElement('a');
+              classBox.setAttribute('href', 'period-display.html');
+              classBox.innerHTML = `
+                <div class="class-boxes">
+                  <div>
+                    <span>Period ${cls.period}</span>
+                    <h3>${cls.name}</h3>
+                  </div>
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+              `;
+              classPeriodsContainer.appendChild(classBox);
+            });
+          </script>
+          
     </body>
 </html>

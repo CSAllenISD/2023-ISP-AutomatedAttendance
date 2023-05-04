@@ -42,11 +42,56 @@
 
 body {
     width: 100%;
-    height: auto;
-    background: #101010;
-    background-repeat: no-repeat;
+    height: 100%;
+    background: linear-gradient(#1D1D1D, #000000);
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+.bubble {
+    width: 150%;
+    height: 150%;
+    background-color: #242331;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: 570px;
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.bubble-middle {
+    width: 150%;
+    height: 150%;
+    background-color: #44425C;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: calc(570px + 700px);
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.bubble-bottom {
+    width: 150%;
+    height: 150%;
+    background-color: #67648B;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: calc(1270px + 700px);
+    left: -25%;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.bubble h1 {
+    padding: 300px;
+    text-align: center;
+    color: #fff;
 }
 
 nav {
@@ -156,4 +201,3 @@ nav a:hover:nth-child(1), a:active {
         grid-template-columns: 1fr;
     }
 }
-

@@ -85,7 +85,7 @@ a,a:visited {
     font-weight: 700;
 }
 
-#main-content .welcome-name h1 {
+#main-content .welcome-name span {
     color: #8685ef;
     font-size: 4rem;
 }
@@ -100,6 +100,7 @@ main.table {
     border-radius: 30px;
     box-shadow: 0 .4rem .8rem #0005;
     overflow: hidden;
+    margin-bottom: 100px;
 }
 
 .table-header {
@@ -202,6 +203,25 @@ tbody tr:hover {
     background: #252525;
 }
 
+#removeButton {
+    display: none;
+    top: 50%;
+    -ms-transform: translateY(18%);
+    transform: translateY(18%);
+}
+
+#removeButton button {
+    border: none;
+    background-color: transparent;
+    color: #b33d3d;
+}
+
+#removeButton button:active {
+    border: none;
+    background-color: transparent;
+    color: #cacaca;
+}
+
 .create-buttons {
     display: flex;
     justify-content: flex-end;
@@ -227,8 +247,17 @@ tbody tr:hover {
     padding-right: 5px;
 }
 
+.create-buttons button {
+    border: none;
+    background-color: transparent;
+}
+
 .new-class-button-wrapper {
     padding: 5px 10px;
+}
+
+#editModeBtn {
+    display: "inline-block"
 }
 
 .create-buttons .edit-classes-button {
@@ -242,7 +271,79 @@ tbody tr:hover {
     box-shadow: 0 .4rem .8rem #0005;
 }
 
+.create-buttons .edit-classes-button:hover {
+    background: #cacaca;
+    color: #8685ef;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
 .edit-classes-button-wrapper {
+    padding: 5px 10px;
+}
+
+#saveBtn {
+    display: none;
+}
+
+.create-buttons .save-classes-button {
+    margin-right: 20px;
+    background: #8685ef;
+    color: #cacaca;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
+.create-buttons .save-classes-button:hover {
+    background: #cacaca;
+    color: #8685ef;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
+.save-classes-button-wrapper {
+    padding: 5px 10px;
+}
+
+#cancelBtn {
+    display: none;
+}
+
+.create-buttons .cancel-classes-button {
+    background: #8685ef;
+    color: #cacaca;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
+.create-buttons .cancel-classes-button:hover {
+    background: #cacaca;
+    color: #8685ef;
+    width: 180px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    box-shadow: 0 .4rem .8rem #0005;
+}
+
+.cancel-classes-button-wrapper {
     padding: 5px 10px;
 }
 
