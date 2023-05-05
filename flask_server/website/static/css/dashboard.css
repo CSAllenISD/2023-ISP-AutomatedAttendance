@@ -172,6 +172,10 @@ body {
     color:Red;
 }
 
+.Tardy{
+    color: Yellow;
+}
+
 .student-name {
     padding: 12px;
 }

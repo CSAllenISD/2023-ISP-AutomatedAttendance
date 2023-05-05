@@ -6,7 +6,7 @@ from sqlite3 import Error
 
 # (B) DATABASE + SQL FILE
 DBFILE = "User1.db"
-SQLFILE = "allClasses.sql"
+SQLFILE = "User1.sql"
 
 # (C) DELETE OLD DATABASE IF EXIST
 if os.path.exists(DBFILE):

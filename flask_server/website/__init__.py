@@ -1,13 +1,13 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import os
 from os import path
 from flask_login import LoginManager
 import sqlite3
 import cv2
 import face_recognition
 import numpy as np
-
-import time
+import datetime
 
 db = SQLAlchemy()
 HOST_NAME = "localhost"
@@ -43,10 +43,22 @@ def create_app():
     return app
 
 
-# def create_database(app):
-#     if not path.exists('website/' + DBFILE):
-#         db.create_all(app=app)
-#         print('Created Database!')
+def create_database(app):
+    if not path.exists(DBFILE):
+        db.create_all(app=app)
+        SQLFILE = "allClasses.sql"
+
+    # (C) DELETE OLD DATABASE IF EXIST
+    if os.path.exists(DBFILE):
+        os.remove(DBFILE)
+
+    # (D) IMPORT SQL
+    conn = sqlite3.connect(DBFILE)
+    with open(SQLFILE) as f:
+        conn.executescript(f.read())
+    conn.commit()
+    conn.close()
+    print("Database created!")
 
 
 def getstudents(period):
@@ -67,14 +79,46 @@ def update_attendance(period, stu_name):
     c.execute("SELECT * FROM " + period)
     results = c.fetchall()
 
+    if isTardy(period) == True:
+        c.execute(
+            "UPDATE " + period + " SET stu_attendance = ? WHERE stu_name= ?",
+            ("Tardy", stu_name),
+        )
     # Update attendance
-    c.execute(
-        "UPDATE " + period + " SET stu_attendance = ? WHERE stu_name= ?",
-        ("Present", stu_name),
-    )
+    else:
+        c.execute(
+            "UPDATE " + period + " SET stu_attendance = ? WHERE stu_name= ?",
+            ("Present", stu_name),
+        )
     conn.commit()
     c.close()
     conn.close()
+
+
+def isTardy(period):
+    current = datetime.datetime.now().time()
+    if period == "Period1":
+        start = datetime.time(8, 30, 0)
+        if current > start:
+            return True
+    if period == "Period2":
+        start = datetime.time(9, 45, 0)
+        if current > start:
+            return True
+    if period == "Period3":
+        start = datetime.time(11, 25, 0)
+        if current > start:
+            return True
+    if period == "Period4":
+        start = datetime.time(1, 30, 0)
+        if current > start:
+            return True
+    if period == "Period8":
+        start = datetime.time(3, 10, 0)
+        if current > start:
+            return True
+    else:
+        return False
 
 
 # camera
