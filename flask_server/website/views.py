@@ -1,8 +1,8 @@
 from flask import Blueprint, Response, render_template, request, flash
 from flask_login import login_required, current_user
 from . import db, HOST_NAME, HOST_PORT, gen_frames, getstudents
-import time
 import datetime
+import time
 
 views = Blueprint('views', __name__)
 
@@ -21,7 +21,7 @@ def dashboard():
 def P1():
   # (C1) GET ALL students
     students = getstudents('Period1')
-    time.sleep(5.0)
+    time.sleep(3.0)
  # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
