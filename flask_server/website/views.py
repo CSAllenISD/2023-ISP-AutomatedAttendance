@@ -22,7 +22,7 @@ def dashboard():
 def P1():
     # (C1) GET ALL students
     students = getstudents("Period1")
-    time.sleep(3.0)
+    time.sleep(2.0)
     # (C2) RENDER HTML PAGE
     return render_template("dashboardTable.html", student=students)
 
@@ -122,21 +122,20 @@ def temp():
 @views.route("/video/")
 def video():
     period = "Period1"
-    now = datetime.datetime.now().time()
-    if (now.hour == 8 and 30 <= now.minute) or (now.hour == 9 and now.minute < 45):
-        period = "Period1"
-    elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and now.minute < 25):
-        period = "Period2"
-    elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and now.minute < 30):
-        period = "Period3"
-    elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and now.minute < 10):
-        period = "Period4"
-    elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and now.minute < 10):
-        period = "Period8"
-    else:
-        period = "Period1"  # testing purposes
+    # now = datetime.datetime.now().time()
+    # if (now.hour == 8 and 30 <= now.minute) or (now.hour == 9 and now.minute < 45):
+    #     period = "Period1"
+    # elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and now.minute < 25):
+    #     period = "Period2"
+    # elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and now.minute < 30):
+    #     period = "Period3"
+    # elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and now.minute < 10):
+    #     period = "Period4"
+    # elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and now.minute < 10):
+    #     period = "Period8"
+    # else:
+    #     period = "Period1"  # testing purposes
 
     return Response(
         gen_frames(period), mimetype="multipart/x-mixed-replace; boundary=frame"
     )
-    # return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')

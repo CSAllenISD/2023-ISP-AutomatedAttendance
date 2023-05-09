@@ -23,7 +23,7 @@ def login():
                 flash("Logged in successfully!", category="success")
                 login_user(user, remember=True)
                 # for display purposes, go automatically to P1
-                return redirect(url_for("views.P1"))
+                return redirect(url_for("views.dashboard"))
             else:
                 flash("Incorrect password, try again.", category="error")
         else:
