@@ -13,6 +13,7 @@ db = SQLAlchemy()
 HOST_NAME = "localhost"
 HOST_PORT = 80
 DBFILE = "User1.db"
+camera = cv2.VideoCapture(0)
 
 
 def create_app():
@@ -124,7 +125,6 @@ def isTardy(period):
 # camera
 #
 # FACE REC---------------------
-camera = cv2.VideoCapture(0)
 obama_image = face_recognition.load_image_file("website/faces/obama.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 

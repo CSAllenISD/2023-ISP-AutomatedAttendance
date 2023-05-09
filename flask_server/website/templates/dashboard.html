@@ -56,7 +56,7 @@
 
             <div class="camera-display">
                 <div class="camera-box">
-                    {% block camera %} {% endblock %}
+                    <img src="{{ url_for('views.video') }}" width="100%">
                 </div>
             </div>
         </section>
@@ -74,7 +74,7 @@
                 counter=3;
               }
             $("#content-right").load(" #content-right > *");
-            }, 1000);
+            }, 3000);
             });
             </script>
     </body>

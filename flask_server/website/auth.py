@@ -8,7 +8,6 @@ import time
 
 # import cv2
 
-
 auth = Blueprint("auth", __name__)
 
 
