@@ -33,8 +33,12 @@ def login():
 
     return render_template("login.html", user=current_user)
 
+<<<<<<< HEAD
 
 @auth.route("/logout")
+=======
+@auth.route('/logout')
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 @login_required
 def logout():
     logout_user()

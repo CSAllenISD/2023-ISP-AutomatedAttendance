@@ -8,9 +8,9 @@ Our ISP project is an automated attendance system that functions with the use of
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://docs.google.com/spreadsheets/d/15uGPTuBVmWsWW6YNMRo7OjLgvPd4dv3nIHc8Ax7pDAY/edit#gid=0
 
-## Product Manager:
+## Project Manager:
 
--Akshay Vemulapalli
+-William Clymire
 
 ## Project Manager:
 
@@ -29,6 +29,10 @@ Our ISP project is an automated attendance system that functions with the use of
 -Serenity Underwood
 
 -Cameron Farley
+
+-Akshay Vemulapalli
+
+-William Clymire
 
 ## QA Engineers:
 

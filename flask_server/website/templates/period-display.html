@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" onload="studentCount()">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Dashboard</title>
-        <link rel="stylesheet" href="{{url_for('static',filename='css/period-display.css')}}" />
-        <link rel="icon" type="image/png" href="{{url_for('static',filename='images/projectlogo.png')}}"/>
+        <link rel="stylesheet" href='{{url_for('static',filename='css/period-display.css')}}' />
+        <link rel="icon" type="image/png" href='{{url_for('static',filename='images/projectlogo.png')}}' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body onload="studentCount()">
+    <body>
 
         <section id="sidebar">
-            <img src="{{url_for('static',filename='images/projectlogo.png')}}" class="logo">
+            <img src='{{url_for('static',filename='images/projectlogo.png')}}' class="logo">
             <div class="items">
                 <ul>
-                    <li><a href="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                    <li><a href="/classes"><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li><a href="classes.html"><i class="fa-solid fa-folder"></i> Classes</a></li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
                     <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
                     <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </section>
 
         <section id="main-content">
             <div class="welcome-name">
-                <span id="edit">Period 1</span>
-                <h3 id="countDisplay"></h3>
+                <h1>Period 1</h1>
+                <h3># students</h3>
             </div>
 
             <main class="table">
                 <section class="table-header">
                     <h1>Students</h1>
-                    <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search">
+                    <input type="text" placeholder="Search">
                 </section>
 
                 <section class="table-body">
-                    <table width="100%" id="tableID" id="table1">
+                    <table width="100%">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -49,66 +49,18 @@
 
                         <tbody>
                             <tr>
-                                <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> LaQuesha D'Shawnte </td>
+                                <td> <img src='{{url_for('static',filename='images/profilepicturetemp.png')}}' alt=""> LaQuesha D'Shawnte </td>
                                 <td> 243658 </td>
                                 <td> 12 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
+                                <td> <a href="/" class="table-link">Edit</a> </td>
                             </tr>
 
                             <tr>
-                                <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Ayaan Cashapp </td>
+                                <td> <img src='{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}' alt=""> Ayaan Cashapp </td>
                                 <td> 247865 </td>
                                 <td> K </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
-                            <tr>
-                                <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> Marcus Johnson </td>
-                                <td> 356481 </td>
-                                <td> 7 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
-                            
-                            <tr>
-                                <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Jasmine Patel </td>
-                                <td> 385962 </td>
-                                <td> 3 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
-                            
-                            <tr>
-                                <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> Brandon Smith </td>
-                                <td> 579846 </td>
-                                <td> 11 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
-                            <tr>
-                                <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Olivia Nguyen </td>
-                                <td> 498762 </td>
-                                <td> 2 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
-                            
-                            <tr>
-                                <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> Elijah James </td>
-                                <td> 124578 </td>
-                                <td> 10 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
-                            
-                            <tr>
-                                <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Harper Lee </td>
-                                <td> 785236 </td>
-                                <td> 5 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
-                                <td id="removeButton"> <button>Remove</button> </td>
-                            </tr>
+                                <td> <a href="/" class="table-link">Edit</a> </td>
+                        </tr>
 
                         </tbody>
                     </table>
@@ -125,31 +77,19 @@
                 </div>
                 </a>
 
+<<<<<<< HEAD
 
                 <button id="editModeBtn">
+=======
+                <a href="/">
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
                 <div class="edit-classes-button">
                     <div class="edit-classes-button-wrapper">
                         <i class="fa-solid fa-pen"></i>
                         Edit Class
                     </div>
                 </div>
-                </button>
-
-                <button id="saveBtn">
-                    <div class="save-classes-button">
-                        <div class="save-classes-button-wrapper">
-                            Save
-                        </div>
-                    </div>
-                </button>
-
-                <button id="cancelBtn">
-                    <div class="cancel-classes-button">
-                        <div class="cancel-classes-button-wrapper">
-                            Cancel
-                        </div>
-                    </div>
-                </button>
+                </a>
             </div>
 
             <div id="myModal" class="modal">
@@ -160,7 +100,7 @@
                         <span class="close"><i class="fa-solid fa-x"></i></span>
                     </div>
                         <section class="table-body">
-                            <table width="100%" id="table2">
+                            <table width="100%">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -178,7 +118,7 @@
                                                 <span class="checkmark"></span>
                                             </label> 
                                         </td>
-                                        <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> LaQuesha D'Shawnte </td>
+                                        <td> <img src='{{url_for('static',filename='images/profilepicturetemp.png')}}' alt=""> LaQuesha D'Shawnte </td>
                                         <td> 243658 </td>
                                         <td> 12 </td>
                                     </tr>
@@ -190,7 +130,7 @@
                                                 <span class="checkmark"></span>
                                             </label>
                                         </td>
-                                        <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Ayaan Cashapp </td>
+                                        <td> <img src='{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}' alt=""> Ayaan Cashapp </td>
                                         <td> 247865 </td>
                                         <td> K </td>
                                     </tr>
@@ -204,8 +144,9 @@
                 </div>
               
               </div>
-              <script src="{{url_for('static',filename='javascript/add-student.js')}}"></script>
+              <script src='{{url_for('static',filename='javascript/add-student.js')}}'></script>
         </section>
+
         
     </body>
 </html>

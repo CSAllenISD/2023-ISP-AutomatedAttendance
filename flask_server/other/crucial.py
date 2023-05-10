@@ -1,4 +1,5 @@
 import sqlite3
+<<<<<<< HEAD
 from flask import (
     Flask,
     Response,
@@ -9,6 +10,9 @@ from flask import (
     flash,
     redirect,
 )
+=======
+from flask import Flask, Response, render_template, request, make_response, url_for, flash, redirect
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 import os
 import cv2
 import face_recognition
@@ -18,11 +22,19 @@ import time
 
 app = Flask(__name__)
 camera = cv2.VideoCapture(0)
+<<<<<<< HEAD
 app.config["SECRET_KEY"] = "your secret key"
 
 HOST_NAME = "localhost"
 HOST_PORT = 80
 DBFILE = "flask_server/User1.db"  # change this to be the username
+=======
+app.config['SECRET_KEY'] = 'your secret key'
+
+HOST_NAME = "localhost"
+HOST_PORT = 80
+DBFILE = "flask_server/User1.db" #change this to be the username
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 
 # Load a sample picture and learn how to recognize it.
 obama_image = face_recognition.load_image_file("flask_server/faces/obama.jpg")
@@ -37,8 +49,21 @@ izzy_face_encoding = face_recognition.face_encodings(izzy_image)[0]
 
 
 # Create arrays of known face encodings and their names
+<<<<<<< HEAD
 known_face_encodings = [obama_face_encoding, william_face_encoding, izzy_face_encoding]
 known_face_names = ["Barack Obama", "William Clymire", "Isabelle Holden"]
+=======
+known_face_encodings = [
+    obama_face_encoding,
+    william_face_encoding,
+    izzy_face_encoding
+]
+known_face_names = [
+    "Barack Obama",
+    "William Clymire",
+    "Isabelle Holden"
+]
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 
 # Initialize some variables
 face_locations = []
@@ -65,12 +90,17 @@ def gen_frames(period):
             # Find all the faces and face encodings in the current frame of video
             face_locations = face_recognition.face_locations(rgb_small_frame)
             face_encodings = face_recognition.face_encodings(
+<<<<<<< HEAD
                 rgb_small_frame, face_locations
             )
+=======
+                rgb_small_frame, face_locations)
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
             face_names = []
             for face_encoding in face_encodings:
                 # See if the face is a match for the known face(s)
                 matches = face_recognition.compare_faces(
+<<<<<<< HEAD
                     known_face_encodings, face_encoding
                 )
                 name = "Unknown"
@@ -78,12 +108,23 @@ def gen_frames(period):
                 face_distances = face_recognition.face_distance(
                     known_face_encodings, face_encoding
                 )
+=======
+                    known_face_encodings, face_encoding)
+                name = "Unknown"
+                # Or instead, use the known face with the smallest distance to the new face
+                face_distances = face_recognition.face_distance(
+                    known_face_encodings, face_encoding)
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
                 best_match_index = np.argmin(face_distances)
                 if matches[best_match_index]:
                     name = known_face_names[best_match_index]
 
                 face_names.append(name)
+<<<<<<< HEAD
                 update_attendance(period, name)
+=======
+                update_attendance(period,name)
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 
             # Display the results
             for (top, right, bottom, left), name in zip(face_locations, face_names):
@@ -94,6 +135,7 @@ def gen_frames(period):
                 left *= 4
 
                 # Draw a box around the face
+<<<<<<< HEAD
                 cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
 
                 # Draw a label with a name below the face
@@ -108,6 +150,22 @@ def gen_frames(period):
             ret, buffer = cv2.imencode(".jpg", frame)
             frame = buffer.tobytes()
             yield (b"--frame\r\n" b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n")
+=======
+                cv2.rectangle(frame, (left, top),
+                              (right, bottom), (0, 0, 255), 2)
+
+                # Draw a label with a name below the face
+                cv2.rectangle(frame, (left, bottom - 35),
+                              (right, bottom), (0, 0, 255), cv2.FILLED)
+                font = cv2.FONT_HERSHEY_DUPLEX
+                cv2.putText(frame, name, (left + 6, bottom - 6),
+                            font, 1.0, (255, 255, 255), 1)
+
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 
 
 def getstudents(period):
@@ -118,8 +176,12 @@ def getstudents(period):
     conn.close()
     return results
 
+<<<<<<< HEAD
 
 def update_attendance(period, stu_name):
+=======
+def update_attendance(period,stu_name):
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
     # Connect to the database
     conn = sqlite3.connect(DBFILE)
     c = conn.cursor()
@@ -127,24 +189,37 @@ def update_attendance(period, stu_name):
     # get the current period
     c.execute("SELECT * FROM " + period)
     results = c.fetchall()
+<<<<<<< HEAD
 
     # Update attendance
     c.execute(
         "UPDATE Period1 SET stu_attendance = ? WHERE stu_name= ?", ("Present", stu_name)
     )
+=======
+    
+    # Update attendance
+    c.execute("UPDATE Period1 SET stu_attendance = ? WHERE stu_name= ?", ("Present", stu_name))
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
     conn.commit()
     c.close()
     conn.close()
 
+<<<<<<< HEAD
 
 @app.route("/")
 def landing_page():
     return render_template("landing.html")
 
+=======
+@app.route('/')
+def landing_page():
+    return render_template('landing.html')
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
 
 # login and signup may need GET and PUT
 
 
+<<<<<<< HEAD
 @app.route("/signup/")
 def signup():
     return render_template("signup.html")
@@ -252,3 +327,102 @@ if __name__ == "__main__":
 #     <img src="{{ url_for('views.video') }}" width="75%"/>
 # </div>
 # {% endblock %}
+=======
+@app.route('/signup/')
+def signup():
+    return render_template('signup.html')
+
+
+@app.route('/login/')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/dashboard/', methods=('GET', 'POST'))
+def dashboard():
+    return render_template('dashboard.html')
+
+
+@app.route('/P1/')
+def P1():
+    # (C1) GET ALL students
+    students = getstudents('Period1')
+    time.sleep(1.0)
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+
+@app.route('/P2/')
+def P2():
+    # (C1) GET ALL students
+    students = getstudents('Period2')
+    time.sleep(1.0)
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+
+@app.route('/P3/')
+def P3():
+    # (C1) GET ALL students
+    students = getstudents('Period3')
+    time.sleep(1.0)
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+
+@app.route('/P4/')
+def P4():
+    # (C1) GET ALL students
+    students = getstudents('Period4')
+    time.sleep(1.0)
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+# check if this one exists
+@app.route('/P8/')
+def P5():
+    # (C1) GET ALL students
+    students = getstudents('Period8')
+    time.sleep(1.0)
+ # (C2) RENDER HTML PAGE
+    return render_template("dashboardTable.html", student=students)
+
+
+@app.route('/add-student/')
+def add_student():
+    return render_template('add-student.html')
+
+
+@app.route('/classes/')
+def classes():
+    return render_template('classblock.html')
+
+
+@app.route('/video/')
+def video():
+    period = 'Period1'
+    now = datetime.datetime.now().time()
+    if (now.hour == 8 and 30 <= now.minute) or (now.hour == 9 and now.minute < 45):
+        period = 'Period1'
+    elif (now.hour == 9 and 45 <= now.minute) or (now.hour == 11 and now.minute < 25):
+        period = 'Period2'
+    elif (now.hour == 11 and 25 <= now.minute) or (now.hour == 1 and now.minute < 30):
+        period = 'Period3'
+    elif (now.hour == 1 and 30 <= now.minute) or (now.hour == 3 and now.minute < 10):
+        period = 'Period4'
+    elif (now.hour == 3 and 10 <= now.minute) or (now.hour == 4 and now.minute < 10):
+        period = 'Period8'
+    else:
+        period = 'Period1' #testing purposes 
+
+    return Response(gen_frames(period), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/FAQ/')
+def FAQ():
+    return render_template('FAQ.html')
+
+
+if __name__ == '__main__':
+    app.run(HOST_NAME, HOST_PORT)
+>>>>>>> 621304a837e410db1fe6f22e344151dbca884c75
