@@ -5,26 +5,32 @@
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Dashboard</title>
         <link rel="stylesheet" href='{{url_for('static',filename='css/dashboard.css')}}' />
-        <link rel="icon" type="image/png" href="images/projectlogo.png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
     <body>
 
         <section id="sidebar">
-            <img src="{{ url_for('static', filename ='images/projectlogo.png') }}" class="logo">
+            <img class="logo" src='{{url_for('static',filename='images/projectlogo.png')}}' class="logo-image"></img>
             <div class="items">
+                <script>
+                    function nextPage(page) {
+                        window.location.href=page;
+                    }
+                </script>
                 <ul>
                     <li><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                    <li><a href="/classes/"><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li onclick='nextPage("../classes")'><a><i class="fa-solid fa-folder"></i> Classes</a></li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
-                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </section>
 
         <section id="main-content">
             <h1 class="welcome-name">
-                Welcome, <span style="color: #8685ef">LaQuesha</span>.
+                Welcome!
             </h1>
 
             <div class="statistics">
@@ -50,62 +56,26 @@
 
             <div class="camera-display">
                 <div class="camera-box">
-                    <div><!--Insert camera display here--></div>
+                    {% block camera %}{% endblock %}
                 </div>
             </div>
         </section>
-
         <section id="content-right">
             <div class="table-box">
-                <table width="100%">
-                    <th>
-                        <tr>
-                            <h3>Period 1</h3><!-- Current class period -->
-                        </tr>
-                    </th>
-                    <tbody>
-                        <tr>
-                            <td class="status">
-                                <i class="fa-solid fa-circle"></i>
-                            </td>
-
-                            <td class="student-name">
-                                <div class="student-de">
-                                    <h5>Oliver Hankins</h5> <!-- student name goes here -->
-                                    <p>243592</p> <!-- student id goes here -->
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="status">
-                                <i class="fa-solid fa-circle"></i>
-                            </td>
-
-                            <td class="student-name">
-                                <div class="student-de">
-                                    <h5>Willie Clymie</h5> <!-- student name goes here -->
-                                    <p>246593</p> <!-- student id goes here -->
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="status">
-                                <i class="fa-solid fa-circle"></i>
-                            </td>
-
-                            <td class="student-name">
-                                <div class="student-de">
-                                    <h5>Joshy-poo</h5> <!-- student name goes here -->
-                                    <p>269438</p> <!-- student id goes here -->
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                {% block content %} {% endblock %}
             </div>
         </section>
-
+        <script>
+            $(document).ready(function(){
+                var counter = 3;
+            window.setInterval(function(){
+             counter--;
+              if (counter===0){
+                counter=3;
+              }
+            $("#content-right").load(" #content-right > *");
+            }, 3000);
+            });
+            </script>
     </body>
 </html>
