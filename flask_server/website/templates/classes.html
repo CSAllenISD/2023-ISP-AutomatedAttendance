@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href='{{url_for('static',filename='css/classes.css')}}' />
+        <link rel="icon" type="image/png" href="{{url_for('static',filename='images/projectlogo.png')}}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+
+        <section id="sidebar">
+            <img src="{{ url_for('static', filename ='images/projectlogo.png') }}" class="logo">
+            <div class="items">
+                <ul>
+                    <li><a href="/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li><i class="fa-solid fa-folder"></i> Classes</li>
+                    <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
+                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="main-content">
+            <h1 class="welcome-name">
+                Classes
+            </h1>
+
+            <div class="class-periods" id="class-periods-container">
+                <a href="/periods/">
+                <div class="class-boxes">
+                    <div>
+                        <span>Period 1</span>
+                        <h3># students</h3>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+                </a>
+
+                <a href="/P1/">
+                    <div class="class-boxes">
+                        <div>
+                            <span>Start Period 1</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                    </a>
+                
+
+            </div>
+
+        
+
+                <a href="/">
+                    <div class="edit-classes-button">
+                        <div class="edit-classes-button-wrapper">
+                            <i class="fa-solid fa-pen"></i>
+                            Edit Classes
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <script>
+            const classPeriodsContainer = document.querySelector('#class-periods-container');
+            let classes = JSON.parse(localStorage.getItem('classes')) || [];
+            classes.forEach(function(cls) {
+              const classBox = document.createElement('a');
+              classBox.setAttribute('href', 'period-display.html');
+              classBox.innerHTML = `
+                <div class="class-boxes">
+                  <div>
+                    <span>Period ${cls.period}</span>
+                    <h3>${cls.name}</h3>
+                  </div>
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+              `;
+              classPeriodsContainer.appendChild(classBox);
+            });
+          </script>
+          
+    </body>
+</html>

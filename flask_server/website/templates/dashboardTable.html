@@ -1,0 +1,33 @@
+{% extends 'dashboard.html' %}
+<!-- will try new name for index eventually -->
+
+{% block content %}
+    <table width="100%">
+        <th>
+            <tr>
+                <td class="heading">
+                    <h3>Class</h3>
+                </td> <!-- Current class period -->
+            </tr>
+        </th>
+        <tbody>
+    {% for s in student %}
+        <tr>
+            <td class="status">
+                <i class="fa-solid fa-circle {{ s[2] }}"></i>
+            </td>   
+            <td class="student-name">
+                <div class="student-de">
+                    <h5>{{ s[1] }}</h5> <!-- student name goes here -->
+                    <p>id: {{ s[0] }}</p> <!-- student id goes here -->
+                </div>
+            </td>
+        </tr>
+    {% endfor %} 
+        </tbody>    
+    </table>
+{% endblock %}
+
+{% block camera %}
+<img src="{{ url_for('views.video') }}" width="75%"/>
+{% endblock %}
