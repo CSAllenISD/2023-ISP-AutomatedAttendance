@@ -9,8 +9,6 @@ import face_recognition
 import numpy as np
 import datetime
 
-import concurrent.futures
-
 db = SQLAlchemy()
 HOST_NAME = "localhost"
 HOST_PORT = 80
