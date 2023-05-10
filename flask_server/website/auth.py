@@ -3,8 +3,8 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db  ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
+from .__init__ import getPeriod
 
-import time
 
 # import cv2
 
@@ -23,7 +23,7 @@ def login():
                 flash("Logged in successfully!", category="success")
                 login_user(user, remember=True)
                 # for display purposes, go automatically to P1
-                return redirect(url_for("views.dashboard"))
+                return redirect(url_for("views.currentPeriod"))
             else:
                 flash("Incorrect password, try again.", category="error")
         else:

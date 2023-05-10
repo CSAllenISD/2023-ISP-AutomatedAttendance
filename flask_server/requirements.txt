@@ -1,17 +1,16 @@
 # 1. create virtual environment
 # 2. open environment
-# 3.go to dlib folder. run: "pip install cmake" then "pip install dlib-19.22.1-cp39-cp39-win_amd64.whl" 
-# 3.5 use link for errors: https://github.com/aliasad20/dlib-19.22.1_whl
-# 4. pip install -r requirements.txt
-# 4.5  use following link for errors: https://medium.com/analytics-vidhya/how-to-install-dlib-library-for-python-in-windows-10-57348ba1117f
+# 3. pip install -r requirements.txt
+# 4  use following link for errors: https://medium.com/analytics-vidhya/how-to-install-dlib-library-for-python-in-windows-10-57348ba1117f
 
 flask
 flask_login
 certifi
 chardet
 click
-cmake
+cmake==3.18.2.post1
 decorator
+dlib==19.18.0
 face-recognition
 face-recognition-models
 idna
@@ -27,4 +26,3 @@ tqdm
 urllib3
 wincertstore
 flask_sqlalchemy
-# sometimes i have issues and i have to use the debugger to compile recognition.py then the rest works

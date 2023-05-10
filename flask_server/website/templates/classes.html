@@ -7,17 +7,25 @@
         <link rel="stylesheet" href='{{url_for('static',filename='css/classes.css')}}' />
         <link rel="icon" type="image/png" href="{{url_for('static',filename='images/projectlogo.png')}}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="text/javascript" src ='{{url_for("static",filename="javascript/getPeriod.js")}}'>  </script>
     </head>
     <body>
 
         <section id="sidebar">
             <img src="{{ url_for('static', filename ='images/projectlogo.png') }}" class="logo">
             <div class="items">
+                <script>
+                    function nextPage(page) {
+                        window.location.href=page;
+                    }
+                </script>
                 <ul>
-                    <li><a href="/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <!-- <li><a href="/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a></li> -->
+                    <li onclick='nextPage("/period")'><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <!-- ok so basically you use period=period when classes is defined and then use that?? -->
                     <li><i class="fa-solid fa-folder"></i> Classes</li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
-                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    <li onclick='nextPage("/logout")'><a><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </section>
@@ -28,15 +36,69 @@
             </h1>
 
             <div class="class-periods" id="class-periods-container">
-                <a href="/periods/">
+                <script>
+                    // yes it's hardcoded. I hate it too
+                    function P1() {
+                        window.location.href = "{{ url_for('views.classPeriod', period='Period1' )}}"
+                    }
+                    function P2() {
+                        window.location.href = "{{ url_for('views.classPeriod', period='Period2' )}}"
+                    }
+                    function P3() {
+                        window.location.href = "{{ url_for('views.classPeriod', period='Period3' )}}"
+                    }
+                    function P4() {
+                        window.location.href = "{{ url_for('views.classPeriod', period='Period4' )}}"
+                    }
+                    function P8() {
+                        window.location.href = "{{ url_for('views.classPeriod', period='Period8' )}}"
+                    }
+
+                </script>
                 <div class="class-boxes">
-                    <div>
+                    <div><a href="/editClass">
                         <span>Period 1</span>
                         <h3># students</h3>
+                        </a>
                     </div>
-                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <i onclick="P1()" class="fa-solid fa-arrow-right-long"></i>
                 </div>
-                </a>
+
+                <div class="class-boxes">
+                    <div><a href="/editClass">
+                        <span>Period 2</span>
+                        <h3># students</h3>
+                        </a>
+                    </div>
+                    <i onclick="P2()" class="fa-solid fa-arrow-right-long"></i>
+                </div>
+
+                <div class="class-boxes">
+                    <div><a href="/editClass">
+                        <span>Period 3</span>
+                        <h3># students</h3>
+                        </a>
+                    </div>
+                    <i onclick="P3()" class="fa-solid fa-arrow-right-long"></i>
+                </div>
+
+                <div class="class-boxes">
+                    <div><a href="/editClass">
+                        <span>Period 4</span>
+                        <h3># students</h3>
+                        </a>
+                    </div>
+                    <i onclick="P4()" class="fa-solid fa-arrow-right-long"></i>
+                </div>
+
+                <div class="class-boxes">
+                    <div><a href="/editClass">
+                        <span>Period 8</span>
+                        <h3># students</h3>
+                        </a>
+                    </div>
+                    <i onclick="P8()" class="fa-solid fa-arrow-right-long"></i>
+                </div>
             </div>
 
             <div class="create-buttons">

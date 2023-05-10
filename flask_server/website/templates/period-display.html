@@ -13,13 +13,16 @@
         <section id="sidebar">
             <img src="{{url_for('static',filename='images/projectlogo.png')}}" class="logo">
             <div class="items">
+                <script>
+                    function nextPage(page) {
+                        window.location.href=page;
+                    }
+                </script>
                 <ul>
-                    <li><a href="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                    <li><a href="/classes"><i class="fa-solid fa-folder"></i> Classes</a></li>
+                    <li onclick='nextPage("/period")'><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li onclick='nextPage("/classes")'><a><i class="fa-solid fa-folder"></i> Classes</a></li>
                     <li><a href="/"><i class="fa-solid fa-users"></i> New Class</a></li>
-                    <li><a href="/"><i class="fa-solid fa-user-plus"></i> New Student</a></li>
-                    <li><a href="/"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    <li onclick='nextPage("/logout")'><a><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </section>
@@ -52,7 +55,7 @@
                                 <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> LaQuesha D'Shawnte </td>
                                 <td> 243658 </td>
                                 <td> 12 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
 
@@ -60,14 +63,14 @@
                                 <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Ayaan Cashapp </td>
                                 <td> 247865 </td>
                                 <td> K </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
                             <tr>
                                 <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> Marcus Johnson </td>
                                 <td> 356481 </td>
                                 <td> 7 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
                             
@@ -75,7 +78,7 @@
                                 <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Jasmine Patel </td>
                                 <td> 385962 </td>
                                 <td> 3 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
                             
@@ -83,14 +86,14 @@
                                 <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> Brandon Smith </td>
                                 <td> 579846 </td>
                                 <td> 11 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
                             <tr>
                                 <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Olivia Nguyen </td>
                                 <td> 498762 </td>
                                 <td> 2 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
                             
@@ -98,7 +101,7 @@
                                 <td> <img src="{{url_for('static',filename='images/profilepicturetemp.png')}}" alt=""> Elijah James </td>
                                 <td> 124578 </td>
                                 <td> 10 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
                             
@@ -106,7 +109,7 @@
                                 <td> <img src="{{url_for('static',filename='images/childTantrum-168269757-770x553-1-650x428.jpeg')}}" alt=""> Harper Lee </td>
                                 <td> 785236 </td>
                                 <td> 5 </td>
-                                <td> <a href="Student-Information.html" class="table-link">View</a> </td>
+                                <td> <a href="/Student-Information" class="table-link">View</a> </td>
                                 <td id="removeButton"> <button>Remove</button> </td>
                             </tr>
 

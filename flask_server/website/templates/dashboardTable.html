@@ -29,5 +29,5 @@
 {% endblock %}
 
 {% block camera %}
-<img src="{{ url_for('views.video') }}" width="75%"/>
+<img src="{{ url_for('views.video', period=period) }}" width="75%"/>
 {% endblock %}
