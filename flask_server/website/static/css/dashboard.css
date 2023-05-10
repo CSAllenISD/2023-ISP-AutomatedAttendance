@@ -159,9 +159,21 @@ body {
 }
 
 .status i {
-    color: red;
     width: 24px;
     height: auto;
+}
+
+.Present{
+    color: green;
+
+}
+
+.Absent{
+    color:Red;
+}
+
+.Tardy{
+    color: Yellow;
 }
 
 .student-name {
