@@ -154,10 +154,39 @@ william_face_encoding = face_recognition.face_encodings(william_image)[0]
 izzy_image = face_recognition.load_image_file("website/faces/izzy.jpg")
 izzy_face_encoding = face_recognition.face_encodings(izzy_image)[0]
 
+cameron_image = face_recognition.load_image_file("website/faces/cameron.jpg")
+cameron_face_encoding = face_recognition.face_encodings(cameron_image)[0]
+
+oliver_image = face_recognition.load_image_file("website/faces/oliver.jpg")
+oliver_face_encoding = face_recognition.face_encodings(oliver_image)[0]
+
+connor_image = face_recognition.load_image_file("website/faces/connor.jpg")
+connor_face_encoding = face_recognition.face_encodings(connor_image)[0]
+
+
+josh_image = face_recognition.load_image_file("website/faces/josh.jpg")
+josh_face_encoding = face_recognition.face_encodings(josh_image)[0]
+
 
 # Create arrays of known face encodings and their names
-known_face_encodings = [obama_face_encoding, william_face_encoding, izzy_face_encoding]
-known_face_names = ["Barack Obama", "William Clymire", "Isabelle Holden"]
+known_face_encodings = [
+    obama_face_encoding,
+    william_face_encoding,
+    izzy_face_encoding,
+    cameron_face_encoding,
+    oliver_face_encoding,
+    connor_face_encoding,
+    josh_face_encoding,
+]
+known_face_names = [
+    "Barack Obama",
+    "William Clymire",
+    "Isabelle Holden",
+    "Cameron Farley",
+    "Oliver Hankins",
+    "Connor Church",
+    "Joshua Lee",
+]
 
 # Initialize some variables
 face_locations = []
