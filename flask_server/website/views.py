@@ -110,7 +110,7 @@ def layout():
 
 @views.route("/periods/")
 def periods():
-    return render_template("period-display.html")
+    return render_template("period-display1.html")
 
 
 @views.route("/temp-period/")
