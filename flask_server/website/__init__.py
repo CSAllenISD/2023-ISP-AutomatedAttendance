@@ -14,12 +14,13 @@ import concurrent.futures
 db = SQLAlchemy()
 HOST_NAME = "localhost"
 HOST_PORT = 80
-DBFILE = "User1.db"
 camera = cv2.VideoCapture(0)
 
 
 def create_app():
+    from .models import User
     app = Flask(__name__)
+    DBFILE = ("{User.first_name}.db")
     app.config["SECRET_KEY"] = "a0s98fhawepjif-a9s8jdf"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DBFILE}"
     db.init_app(app)
@@ -30,7 +31,6 @@ def create_app():
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
 
-    from .models import User
 
     with app.app_context():
         db.create_all()
