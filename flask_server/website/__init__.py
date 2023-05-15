@@ -165,6 +165,9 @@ connor_face_encoding = face_recognition.face_encodings(connor_image)[0]
 josh_image = face_recognition.load_image_file("website/faces/josh.jpg")
 josh_face_encoding = face_recognition.face_encodings(josh_image)[0]
 
+vijay_image = face_recognition.load_image_file("website/faces/facerecvijay.jpg")
+vijay_face_encoding = face_recognition.face_encodings(vijay_image)[0]
+
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
@@ -175,6 +178,7 @@ known_face_encodings = [
     oliver_face_encoding,
     connor_face_encoding,
     josh_face_encoding,
+    vijay_face_encoding
 ]
 known_face_names = [
     "Barack Obama",
@@ -184,6 +188,7 @@ known_face_names = [
     "Oliver Hankins",
     "Connor Church",
     "Joshua Lee",
+    "Vijay Vemulapalli",
 ]
 
 # Initialize some variables
