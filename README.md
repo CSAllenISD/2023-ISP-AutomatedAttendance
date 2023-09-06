@@ -12,9 +12,9 @@ Our ISP project is an automated attendance system that functions with the use of
 
 -William Clymire
 
-## Project Manager:
+## Product Manager:
 
--William Clymire
+-Akshay Vemulapalli
 
 ## Release Manager:
 
